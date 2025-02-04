@@ -1,4 +1,8 @@
 /* Основные селекторы */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -51,4 +55,10 @@ a {
     h1, h2, h3 {
         font-size: small;
     }
+}
+
+/* Интерактивность и Анимации */
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
