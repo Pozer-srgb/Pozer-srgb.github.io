@@ -15,11 +15,13 @@
             <a href="#about">Обо мне</a>
             <a href="#hobby">Хобби</a>
             <a href="#project">Проекты</a>
+            <a href="#blog">Последние статьи</a>
+            <a href="#contact">Связаться со мной</a>
         </nav>
         <main>
             <section id="about" class="card">
                 <h2>Обо мне</h2>
-                <img src="img/my-photo.jpg" alt="Фото Данила, разработчика сайтов" width="200">
+                <img src="img/my-photo.jpg" alt="Фото Данила, разработчика сайтов" width="200" loading="lazy">
                 <h3>Данил</h3>
                 <p>Я обычный парень из Ростова-на-Дону, который хочет научиться программировать</p>
             </section>
@@ -33,6 +35,33 @@
             </section>
             <section id="project" class="card">
                 <h2>Проекты</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <!-- Для будущих проектов -->
+                        <!-- <img src="img/project.jpg" alt="Проект 1"> -->
+                        <!-- <h3>Лендинг для кофейни</h3> -->
+                    </div>
+                </div>
+            </section>
+            <section id="blog" class="card">
+                <h2>Последние статьи</h2>
+                <article class="blog-post">
+                    <h3>Как я учился верстать</h3>
+                    <time datetime="2025-02-04">4 февраля 2025</time>
+                    <p> Мой путь от новичка до junior-верстальщика начался ещё в 11 классе школы. Я пытался начать изучать вёрстку с бесплатных курсов в интернете, но так далеко не продвинулся из ЕГЭ. 
+                        После школы я поступил в ДГТУ, Ростове-на-Дону. И паралельно с учёбой в университете, я снова начал потехоньку осваивать вёрстку, шаг за шагом, никуда не спеша.
+                        И этот путь привёл меня к написанию данного сайта-портфолио, пока что у меня нет проектов, но надеюсь меня заметят, чтобы я и дальше мог развиваться и изучать новые технологии.
+                    </p>
+                </article>
+            </section>
+            <section id="contact" class="card">
+                <h2>Связаться со мной</h2>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Сообщение" rows="5"></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
             </section>
         </main>
         <footer>
