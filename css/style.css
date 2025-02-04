@@ -1,0 +1,54 @@
+/* Основные селекторы */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+section {
+    padding: 10px;
+    margin: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+}
+
+h1, h2, h3 {
+    color: navy;
+}
+
+p {
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Классы */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Медиа-запросы */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    h1, h2, h3 {
+        font-size: small;
+    }
+}
