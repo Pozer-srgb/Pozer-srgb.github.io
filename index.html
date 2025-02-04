@@ -2,12 +2,13 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewpot" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Сайт-портфолио Junior верстальщика">
         <meta name="keywords" content="верстка, портфолио, frontend">
 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png">
     </head>
     <body>
         <header>
@@ -31,14 +32,15 @@
                 <h2>Мои хобби</h2>
                 <ul>
                     <li>Люблю играть в компьютерные игры</li>
-                    <li>Читатью книги, мангу, манхву</li>
+                    <li>Читаю книги, мангу, манхву</li>
                     <li>Смотрю сериалы, фильмы и аниме</li>
+                    <li>Учиться чему-то новому</li>
                 </ul>
             </section>
             <section id="project" class="card projects-section">
                 <h2 class="section-title">Проекты</h2>
                 <div class="projects-grid">
-                    <article class="projects-card">
+                    <article class="project-card">
                         <div class="project-content">
                             <h3 class="project-title">Название проекта</h3>
                             <div class="project-buttons">
@@ -55,18 +57,24 @@
                     <h3>Как я учился верстать</h3>
                     <time datetime="2025-02-04">4 февраля 2025</time>
                     <p> Мой путь от новичка до junior-верстальщика начался ещё в 11 классе школы. Я пытался начать изучать вёрстку с бесплатных курсов в интернете, но так далеко не продвинулся из ЕГЭ. 
-                        После школы я поступил в ДГТУ, Ростове-на-Дону. И параллельно с учёбой в университете, я снова начал потихоньку осваивать вёрстку, шаг за шагом, никуда не спеша.
+                        После школы я поступил в ДГТУ (Ростов-на-Дону). И параллельно с учёбой в университете, я снова начал потихоньку осваивать вёрстку, шаг за шагом, никуда не спеша.
                         И этот путь привёл меня к написанию данного сайта-портфолио, пока что у меня нет проектов, но надеюсь меня заметят, чтобы я и дальше мог развиваться и изучать новые технологии.
                     </p>
                 </article>
             </section>
             <section id="contact" class="card">
                 <h2>Связаться со мной</h2>
-                <form>
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Сообщение" rows="5"></textarea>
-                    <button type="submit">Отправить</button>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Сообщение" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Отправить</button>
                 </form>
             </section>
         </main>
