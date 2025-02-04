@@ -37,6 +37,19 @@ a {
     text-decoration: none;
 }
 
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 /* Классы */
 .card {
     background: white;
