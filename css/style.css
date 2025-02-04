@@ -4,6 +4,8 @@ html {
 }
 
 body {
+    line-height: 1.6;
+    color: #333;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
 }
@@ -11,18 +13,6 @@ body {
 section {
     padding: 10px;
     margin: 10px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    padding: 10px;
-}
-
-nav a {
-    color: white;
-    margin-right: 15px;
 }
 
 h1, h2, h3 {
@@ -58,6 +48,70 @@ input, textarea {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 1rem;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.projects-section {
+    padding: 2rem 1rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-content {
+    flex: 1;
+}
+
+.projects-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.project-btn {
+    background: #007bff;
+    color: white;
+    flex: 1 1 120px;
+    text-align: center;
+}
+
 /* Медиа-запросы */
 @media (max-width: 600px) {
     nav {
@@ -70,8 +124,44 @@ input, textarea {
     }
 }
 
+@media (max-width: 480px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .projects-card {
+        min-height: auto;
+    }
+}
+
 /* Интерактивность и Анимации */
 .card:hover {
     transform: translateY(-5px);
     transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+.projects-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
 }
