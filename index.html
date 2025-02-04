@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewpot" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Сайт-портфолио Junior верстальщика">
         <meta name="keywords" content="верстка, портфолио, frontend">
 
@@ -11,12 +13,12 @@
         <header>
             <h1>Мой блог</h1>
         </header>
-        <nav>
-            <a href="#about">Обо мне</a>
-            <a href="#hobby">Хобби</a>
-            <a href="#project">Проекты</a>
-            <a href="#blog">Последние статьи</a>
-            <a href="#contact">Связаться со мной</a>
+        <nav class="main-nav">
+            <a href="#about" class="nav-link">Обо мне</a>
+            <a href="#hobby" class="nav-link">Хобби</a>
+            <a href="#project" class="nav-link">Проекты</a>
+            <a href="#blog" class="nav-link">Последние статьи</a>
+            <a href="#contact" class="nav-link">Связаться со мной</a>
         </nav>
         <main>
             <section id="about" class="card">
@@ -33,14 +35,18 @@
                     <li>Смотрю сериалы, фильмы и аниме</li>
                 </ul>
             </section>
-            <section id="project" class="card">
-                <h2>Проекты</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <!-- Для будущих проектов -->
-                        <!-- <img src="img/project.jpg" alt="Проект 1"> -->
-                        <!-- <h3>Лендинг для кофейни</h3> -->
-                    </div>
+            <section id="project" class="card projects-section">
+                <h2 class="section-title">Проекты</h2>
+                <div class="projects-grid">
+                    <article class="projects-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Название проекта</h3>
+                            <div class="project-buttons">
+                                <a href="#" class="btn project-btn">Демо</a>
+                                <a href="#" class="btn project-btn">Код</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </section>
             <section id="blog" class="card">
