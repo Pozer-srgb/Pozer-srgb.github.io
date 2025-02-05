@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Сайт-портфолио Junior верстальщика">
         <meta name="keywords" content="верстка, портфолио, frontend">
+        <meta property="og:title" content="Портфолио Данила - Frontend разработчик">
+        <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -24,7 +26,10 @@
         <main>
             <section id="about" class="card">
                 <h2>Обо мне</h2>
-                <img src="img/my-photo.jpg" alt="Фото Данила, разработчика сайтов" width="200" loading="lazy">
+                <picture>
+                    <source srcset="img/my-photo.webp" type="image/webp">
+                    <img src="img/my-photo.jpg" alt="Фото Данила" width="200" loading="lazy">
+                </picture>
                 <h3>Данил</h3>
                 <p>Я обычный парень из Ростова-на-Дону, который хочет научиться программировать</p>
             </section>
@@ -79,7 +84,11 @@
             </section>
         </main>
         <footer>
-            <p><a href="mailto:tazanu532@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
+            <div class="social-links">
+                <a href="https://github.com/Pozer-srgb" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:tazanu532@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2025 Данил. Все права защищены</p>
         </footer>
     </body>
 </html>
