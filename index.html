@@ -9,9 +9,11 @@
         <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
 
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
         <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png">
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="canonical" href="https://pozer-srgb.github.io">
     </head>
     <body>
         <header>
@@ -91,5 +93,14 @@
             </div>
             <p>© 2025 Данил. Все права защищены</p>
         </footer>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Данил",
+                "jobTitle": "Frontend разработчик",
+                "url": "https://pozer-srgb.github.io",
+            }
+        </script>
     </body>
 </html>
