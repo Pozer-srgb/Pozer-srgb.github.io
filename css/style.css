@@ -40,6 +40,11 @@ footer {
     text-align: center;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Классы */
 .card {
     background: white;
@@ -112,6 +117,7 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     transition: all 0.3s ease;
+    will-change: transform;
 }
 
 .project-btn {
@@ -166,10 +172,16 @@ footer {
     padding: 10px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 .blog-post {
     line-height: 1.8;
+}
+
+.blog-post p {
+    text-align: justify;
+    hyphens: auto;
 }
 
 /* ID */
@@ -181,6 +193,7 @@ footer {
     object-fit: cover;
     aspect-ratio: 1/1;
     max-width: 100%;
+    filter: brightness(0.98) contrast(1.1);
 }
 
 #hobby ul {
@@ -231,13 +244,15 @@ footer {
 
     #about {
         display: grid;
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: 1fr;
         gap: 2rem;
         align-items: start;
+        justify-items: center;
     }
 
     #about img {
         margin: 0 auto;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -263,6 +278,11 @@ footer {
     transform: translateY(-2px);
 }
 
+.nav-link:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -280,6 +300,8 @@ footer {
 
 .social-links a:hover {
     opacity: 1;
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .submit-btn:hover {
