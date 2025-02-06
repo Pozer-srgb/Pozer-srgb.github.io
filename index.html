@@ -9,8 +9,8 @@
         <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
 
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
         <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png">
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
         <link rel="canonical" href="https://pozer-srgb.github.io">
@@ -31,7 +31,7 @@
                 <h2>Обо мне</h2>
                 <picture>
                     <source srcset="img/my-photo.webp" type="image/webp">
-                    <img src="img/my-photo.jpg" alt="Фото Данила" width="200" loading="lazy">
+                    <img src="img/my-photo.jpg" alt="Фото Данила" width="200" loading="lazy" decoding="async">
                 </picture>
                 <h3>Данил</h3>
                 <p>Я обычный парень из Ростова-на-Дону, который хочет научиться программировать</p>
@@ -74,13 +74,16 @@
                 <h2>Связаться со мной</h2>
                 <form action="#" method="POST" class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Ваше имя" required>
+                        <label for="name">Ваше имя:</label>
+                        <input id="name" type="text" placeholder="ФИО" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email" required>
+                        <label for="email">Ваш Email:</label>
+                        <input id="email" type="email" placeholder="example@email.com" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Сообщение" rows="5"></textarea>
+                        <label for="message">Ваше сообщение:</label>
+                        <textarea id="message" placeholder="Сообщение" rows="5"></textarea>
                     </div>
                     <button type="submit" class="btn submit-btn">Отправить</button>
                 </form>
@@ -100,6 +103,9 @@
                 "name": "Данил",
                 "jobTitle": "Frontend разработчик",
                 "url": "https://pozer-srgb.github.io",
+                "image": "https://pozer-srgb.github.io",
+                "email": "mailto:tazanu532@gmail.com"
+                "sameAs": ["https://github.com/Pozer-srgb"]
             }
         </script>
     </body>
