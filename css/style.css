@@ -101,7 +101,7 @@ img {
     flex-direction: column;
 }
 
-.projects-content {
+.project-content {
     flex: 1;
 }
 
@@ -263,6 +263,12 @@ img {
 
     .btn {
         width: 100%;
+    }
+}
+
+@media (hover: none) {
+    .card:hover {
+        transform: none;
     }
 }
 
