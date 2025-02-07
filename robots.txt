@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pozer-srgb.github.io/sitemap.xml
