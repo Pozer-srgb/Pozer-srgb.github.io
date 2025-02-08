@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /img/favicon/
 Allow: /
+Disallow: /404.html
 Sitemap: https://pozer-srgb.github.io/sitemap.xml
