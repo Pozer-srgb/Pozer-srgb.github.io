@@ -1,4 +1,4 @@
-const handlerFormSubmit = (event) => {
+const handleFormSubmit = (event) => {
     const form = event.target;
     const loader = form.querySelector('.loader');
     const btnText = form.querySelector('.btn-text');
@@ -18,13 +18,24 @@ const handlerFormSubmit = (event) => {
         loader.style.dispaly = 'none';
         btnText.style.visibility = 'visible';
     })
+
+    .then(response => {
+        if (!response.ok) throw new Error('Ошибка сети');
+        alert('Сообщение отправлено!');
+    })
+
     .catch(error => {
-        console.error('Error, error');
+        console.error('Error:', error);
     });
 };
 
 const initFormLoader = () => {
     const form = document.querySelector('.contact-form');
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
 
     if (form) {
         form.addEventListener('submit', (e) => {
