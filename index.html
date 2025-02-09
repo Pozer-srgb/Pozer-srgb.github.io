@@ -30,13 +30,14 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Сайт-портфолио Junior верстальщика">
-        <meta name="keywords" content="верстка, портфолио, frontend">
-        <meta property="og:title" content="Портфолио Данила - Frontend разработчик">
-        <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
+        <meta name="description" content="Портфолио Данила - начинающего фронтенд-разработчика из Ростова-на-Дону. Адаптивная верстка, современные технологии, frontend">
+        <meta name="keywords" content="frontend разработчик, верстка сайтов, создание лендингов, портфолио программиста">
         <meta name="yandex-verification" content="b53d5c48500dd9a1">
         <meta name="google-site-verification" content="aKJCJSu7Bo5lQm330hiYZWfS8ZmO6lWDgs5JOmRfUXc" />
         <meta name="fragment" content="!">
+        <meta property="og:title" content="Портфолио Данила - Frontend разработчик">
+        <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
+        <meta property="og:image" content="https://pozer-srgb.github.io/img/og-image.jpg">
 
         <title>Данил | Frontend разработчик - Портфолио</title>
 
@@ -60,13 +61,22 @@
         </nav>
         <main>
             <section id="about" class="card">
-                <h2>Обо мне</h2>
-                <picture>
-                    <source srcset="img/my-photo.webp" type="image/webp">
-                    <img src="img/my-photo.jpg" alt="Фото Данила" width="200" loading="lazy" decoding="async">
-                </picture>
-                <h3>Данил</h3>
-                <p>Я обычный парень из Ростова-на-Дону, который хочет научиться программировать</p>
+                <figure>
+                    <picture>
+                        <source srcset="img/my-photo.webp" type="image/webp">
+                        <img src="img/my-photo.jpg" alt="Данил - фронтенд-разработчик" width="200" loading="eager" fetchpriority="high">
+                    </picture>
+                    <figcaption>Данил - Frontend разработчик</figcaption>
+                </figure>
+                <div class="about-content">
+                    <h2>Обо мне</h2>
+                    <p>Junior фронтенд-разработчик из Ростова-на-Дону</p>
+                    <ul class="skills-list">
+                        <li>HTML5/CSS3</li>
+                        <li>Адаптивная верстка</li>
+                        <li>JavaScript (базовый)</li>
+                    </ul>
+                </div>
             </section>
             <section id="hobby" class="card">
                 <h2>Мои хобби</h2>
@@ -108,17 +118,20 @@
                 <form action="#" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="name">Ваше имя:</label>
-                        <input id="name" type="text" placeholder="ФИО" required>
+                        <input id="name" name="name" type="text" placeholder="Иван Иванов" required pattern="[А-Яа-яЁё\s]{2,}">
                     </div>
                     <div class="form-group">
                         <label for="email">Ваш Email:</label>
-                        <input id="email" type="email" placeholder="example@email.com" required>
+                        <input id="email" name="name" type="email" placeholder="example@email.com" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Ваше сообщение:</label>
-                        <textarea id="message" placeholder="Сообщение" rows="5"></textarea>
+                        <textarea id="message" name="name" placeholder="Сообщение" rows="5"></textarea>
                     </div>
-                    <button type="submit" class="btn submit-btn">Отправить</button>
+                    <button type="submit" class="btn submit-btn">
+                        <span class="btn-text">Отправить</span>
+                        <div class="loader" aria-hidden="true"></div>
+                    </button>
                 </form>
             </section>
         </main>
