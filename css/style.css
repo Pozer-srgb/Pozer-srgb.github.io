@@ -233,6 +233,23 @@ img {
     background-color: var(--primary-color);
 }
 
+.menu-toggle {
+    background: var(--primary-color);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
 /* ID */
 #about img {
     float: none;
