@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
 <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NN6GHTPRD"></script>
+        <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-8NN6GHTPRD"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -38,6 +38,10 @@
         <meta property="og:title" content="Портфолио Данила - Frontend разработчик">
         <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
         <meta property="og:image" content="https://pozer-srgb.github.io/img/og-image.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pozer-srgb.github.io">
 
         <title>Данил | Frontend разработчик - Портфолио</title>
 
@@ -50,7 +54,8 @@
     </head>
     <body data-page="index">
         <header>
-            <h1>Мой блог</h1>
+            <h1>Данил - Frontend разработчик</h1>
+            <p>Портфолио начинающего специалиста</p>
         </header>
         <nav class="main-nav">
             <a href="#about" class="nav-link">Обо мне</a>
@@ -66,7 +71,7 @@
                         <source srcset="img/my-photo.webp" type="image/webp">
                         <img src="img/my-photo.jpg" alt="Данил - фронтенд-разработчик" width="200" loading="eager" fetchpriority="high">
                     </picture>
-                    <figcaption>Данил - Frontend разработчик</figcaption>
+                    <figcaption aria-hidden="true">Данил - Frontend разработчик</figcaption>
                 </figure>
                 <div class="about-content">
                     <h2>Обо мне</h2>
@@ -122,11 +127,11 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Ваш Email:</label>
-                        <input id="email" name="name" type="email" placeholder="example@email.com" required>
+                        <input id="email" name="email" type="email" placeholder="example@email.com" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Ваше сообщение:</label>
-                        <textarea id="message" name="name" placeholder="Сообщение" rows="5"></textarea>
+                        <textarea id="message" name="message" placeholder="Сообщение" rows="5"></textarea>
                     </div>
                     <button type="submit" class="btn submit-btn">
                         <span class="btn-text">Отправить</span>
