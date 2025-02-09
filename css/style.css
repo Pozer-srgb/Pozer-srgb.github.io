@@ -1,3 +1,11 @@
+/* Переменные */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
 /* Основные селекторы */
 * {
     transition: all 0.3s ease;
@@ -72,6 +80,7 @@ img {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-link {
@@ -123,11 +132,11 @@ img {
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
-    transition: all 0.3s ease;
     will-change: transform;
     position: relative;
     overflow: hidden;
-    transition: transform 0.2 ease;
+    transition: transform 0.2s ease;
+    background-color: var(--primary-color);
 }
 
 .project-btn {
@@ -193,6 +202,22 @@ img {
 .blog-post p {
     text-align: justify;
     hyphens: auto;
+}
+
+.skills-list {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.loader {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
 }
 
 /* ID */
@@ -269,6 +294,13 @@ img {
         padding: 1rem;
         background: rgba(255, 255, 255, 0.98);
         justify-content: space-around;
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
     }
 
     .nav-link {
@@ -363,6 +395,11 @@ img {
     transform: scale(0.98);
 }
 
+input:invalid, textarea:invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -371,6 +408,10 @@ img {
 @keyframes fadeInBody {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+@keyframes spin {
+    to {transform: rotate(360deg);}
 }
 
 :target {
