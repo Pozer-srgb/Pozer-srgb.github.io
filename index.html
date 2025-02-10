@@ -2,7 +2,11 @@
 <html lang="ru">
     <head>
 <!-- Google tag (gtag.js) -->
-        <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-8NN6GHTPRD"></script>
+        <script data-adblockerignore 
+                async 
+                defer 
+                src="https://www.googletagmanager.com/gtag/js?id=G-8NN6GHTPRD">
+        </script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -31,12 +35,24 @@
 <!-- /Yandex.Metrika counter -->
 
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self';
+                 script-src 'self' https://mc.yandex.ru https://www.googletagmanager.com 'nonce-RANDOM_STRING' 'unsafe-inline';
+                 style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
+                 font-src 'self' https://cdnjs.cloudflare.com data:;
+                 img-src 'self' https://mc.yandex.ru https://www.googletagmanager.com data:;
+                 connect-src 'self' https://mc.yandex.ru https://www.google-analytics.com;
+                 frame-src https://mc.yandex.ru;
+                 object-src 'none'
+                 base-uri 'self'">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Портфолио Данила - начинающего фронтенд-разработчика из Ростова-на-Дону. Адаптивная верстка, современные технологии, frontend">
         <meta name="keywords" content="frontend разработчик, верстка сайтов, создание лендингов, портфолио программиста">
         <meta name="yandex-verification" content="b53d5c48500dd9a1">
         <meta name="google-site-verification" content="aKJCJSu7Bo5lQm330hiYZWfS8ZmO6lWDgs5JOmRfUXc" />
         <meta name="fragment" content="!">
+
         <meta property="og:title" content="Портфолио Данила - Frontend разработчик">
         <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
         <meta property="og:image" content="https://pozer-srgb.github.io/img/og-image.jpg">
@@ -45,11 +61,22 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://pozer-srgb.github.io">
 
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
         <title>Данил | Frontend разработчик - Портфолио</title>
 
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin="anonymous" type="text/css">
+        <link rel="stylesheet" 
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+              integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+              crossorigin="anonymous"
+              referrerpolicy="no-referrer">
+        <link rel="preload"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+              as="style" 
+              crossorigin="anonymous" 
+              integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+              type="text/css">
         <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png">
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
         <link rel="canonical" href="https://pozer-srgb.github.io">
@@ -130,6 +157,7 @@
             </section>
             <section id="contact" class="card">
                 <h2>Связаться со мной</h2>
+                <div class="form-status" aria-live="polite"></div>
                 <form action="#" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="name">Ваше имя:</label>
@@ -157,7 +185,7 @@
             </div>
             <p>© 2025 Данил. Все права защищены</p>
         </footer>
-        <script type="application/ld+json">
+        <script nonce="RANDOM_STRING" type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "Person",
