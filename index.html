@@ -22,8 +22,7 @@
                 type="text/javascript" 
                 src="https://mc.yandex.ru/metrika/tag.js"
                 integrity="sha384-NkgBG9zHHiUyF42+Jyg6a1eXG0C/w7W4vhNNY5L5LNDX6BvS480fS2AG9PEhPwHH"
-                crossorigin="anonymous"
-                referrerpolicy="no-referrer">
+                crossorigin="anonymous">
         </script>
         <script>
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -42,6 +41,7 @@
         <noscript><div><img src="https://mc.yandex.ru/watch/99848484" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Security-Policy" 
         content="default-src 'self';
                  script-src 'self' https://mc.yandex.ru https://www.googletagmanager.com 'unsafe-inline';
@@ -53,8 +53,8 @@
                  object-src 'none';
                  base-uri 'self'">
          <meta http-equiv="X-Content-Type-Options" content="nosniff">
+         <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Портфолио Данила - начинающего фронтенд-разработчика из Ростова-на-Дону. Адаптивная верстка, современные технологии, frontend">
         <meta name="keywords" content="frontend разработчик, верстка сайтов, создание лендингов, портфолио программиста">
         <meta name="yandex-verification" content="b53d5c48500dd9a1">
@@ -74,8 +74,7 @@
         <link rel="stylesheet" 
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
               integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-              crossorigin="anonymous"
-              referrerpolicy="no-referrer">
+              crossorigin="anonymous">
 
         <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
@@ -110,7 +109,7 @@
                 <figure>
                     <picture>
                         <source srcset="img/my-photo.webp" type="image/webp">
-                        <img src="img/my-photo.jpg" alt="Данил - фронтенд-разработчик" width="200" loading="eager" fetchpriority="high">
+                        <img src="img/my-photo.jpg" alt="Данил - фронтенд-разработчик" width="200" loading="eager">
                     </picture>
                     <figcaption>Данил - Frontend разработчик</figcaption>
                 </figure>
@@ -129,8 +128,8 @@
                 <ul>
                     <li>Компьютерные игры</li>
                     <li>Чтение книг и манги</li>
-                    <li>Смотреть аниме и фильмы</li>
-                    <li>Учиться чему-то новому</li>
+                    <li>Просмотр аниме и фильмов</li>
+                    <li>Изучение новых технологий</li>
                 </ul>
             </section>
             <section id="project" class="card projects-section">
@@ -165,7 +164,7 @@
                 <form action="#" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="name">Ваше имя:</label>
-                        <input id="name" name="name" type="text" placeholder="Иван Иванов" required pattern="[А-Яа-яЁёА-Za-z\s]{2,}">
+                        <input id="name" name="name" type="text" placeholder="Иван Иванов" required pattern="[А-Яа-яЁёA-Za-z\s]{2,}">
                     </div>
                     <div class="form-group">
                         <label for="email">Ваш Email:</label>
@@ -187,7 +186,7 @@
                 <a href="https://github.com/Pozer-srgb" aria-label="GitHub профиль" target="_blank" rel="noopener">
                     <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
-                <a href="mailto:tazanu532@gmail.com" aria-label="Email" rel="noopener">
+                <a href="mailto:tazanu532@gmail.com" aria-label="Email">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
@@ -199,6 +198,7 @@
                 "@type": "Person",
                 "name": "Данил",
                 "jobTitle": "Frontend разработчик",
+                "jobTitle": "Frontend Developer",
                 "url": "https://pozer-srgb.github.io",
                 "image": "https://pozer-srgb.github.io/img/my-photo.webp",
                 "email": "mailto:tazanu532@gmail.com",
