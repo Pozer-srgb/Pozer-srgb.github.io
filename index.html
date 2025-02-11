@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-<!-- Google tag (gtag.js) -->
+
         <script data-adblockerignore
                 type="text/javascript"
                 async 
@@ -10,16 +10,14 @@
                 integrity="sha384-NkgBG9zHHiUyF42+Jyg6a1eXG0C/w7W4vhNNY5L5LNDX6BvS480fS2AG9PEhPwHH"
                 crossorigin="anonymous">
         </script>
-        <script type="text/javascript">
+        <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-8NN6GHTPRD');
         </script>
-<!-- Google tag (gtag.js) -->
 
-<!-- Yandex.Metrika counter -->
         <script data-adblockerignore 
                 type="text/javascript" 
                 src="https://mc.yandex.ru/metrika/tag.js"
@@ -27,7 +25,7 @@
                 crossorigin="anonymous"
                 referrerpolicy="no-referrer">
         </script>
-        <script type="text/javascript">
+        <script>
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
             for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -42,7 +40,6 @@
             });
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/99848484" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 
         <meta charset="UTF-8">
         <meta http-equiv="Content-Security-Policy" 
@@ -55,13 +52,13 @@
                  frame-src https://mc.yandex.ru;
                  object-src 'none';
                  base-uri 'self'">
+         <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Портфолио Данила - начинающего фронтенд-разработчика из Ростова-на-Дону. Адаптивная верстка, современные технологии, frontend">
         <meta name="keywords" content="frontend разработчик, верстка сайтов, создание лендингов, портфолио программиста">
         <meta name="yandex-verification" content="b53d5c48500dd9a1">
         <meta name="google-site-verification" content="aKJCJSu7Bo5lQm330hiYZWfS8ZmO6lWDgs5JOmRfUXc" />
-        <meta name="fragment" content="!">
 
         <meta property="og:title" content="Портфолио Данила - Frontend разработчик">
         <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
@@ -71,8 +68,6 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://pozer-srgb.github.io">
 
-        <meta http-equiv="X-Content-Type-Options" content="nosniff">
-
         <title>Данил | Frontend разработчик - Портфолио</title>
 
         <link rel="stylesheet" href="css/style.css">
@@ -81,7 +76,12 @@
               integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
               crossorigin="anonymous"
               referrerpolicy="no-referrer">
-        <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="img/favicon/site.webmanifest">
+
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
         <link rel="canonical" href="https://pozer-srgb.github.io">
 
@@ -93,7 +93,7 @@
             <h1>Данил - Frontend разработчик</h1>
             <p>Портфолио начинающего специалиста</p>
         </header>
-        <nav class="main-nav">
+        <nav class="main-nav" role="navigation">
             <a href="#about" class="nav-link">Обо мне</a>
             <a href="#hobby" class="nav-link">Хобби</a>
             <a href="#project" class="nav-link">Проекты</a>
@@ -112,7 +112,7 @@
                         <source srcset="img/my-photo.webp" type="image/webp">
                         <img src="img/my-photo.jpg" alt="Данил - фронтенд-разработчик" width="200" loading="eager" fetchpriority="high">
                     </picture>
-                    <figcaption aria-hidden="true">Данил - Frontend разработчик</figcaption>
+                    <figcaption>Данил - Frontend разработчик</figcaption>
                 </figure>
                 <div class="about-content">
                     <h2>Обо мне</h2>
@@ -127,9 +127,9 @@
             <section id="hobby" class="card">
                 <h2>Мои хобби</h2>
                 <ul>
-                    <li>Люблю играть в компьютерные игры</li>
-                    <li>Читаю книги, мангу, манхву</li>
-                    <li>Смотрю сериалы, фильмы и аниме</li>
+                    <li>Компьютерные игры</li>
+                    <li>Чтение книг и манги</li>
+                    <li>Смотреть аниме и фильмы</li>
                     <li>Учиться чему-то новому</li>
                 </ul>
             </section>
@@ -137,14 +137,14 @@
                 <h2 class="section-title">Проекты</h2>
                 <div class="projects-grid">
                     <article class="project-card">
-                        <div class="project-content">
+                        <header class="project-content">
                             <h3 class="project-title">Портфолио</h3>
                             <p>Современный адаптивный лендинг</p>
                             <div class="project-buttons">
                                 <a href="https://pozer-srgb.github.io" class="btn project-btn">Демо</a>
                                 <a href="https://github.com/Pozer-srgb/portfolio" class="btn project-btn">Код</a>
                             </div>
-                        </div>
+                        </header>
                     </article>
                 </div>
             </section>
@@ -165,7 +165,7 @@
                 <form action="#" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="name">Ваше имя:</label>
-                        <input id="name" name="name" type="text" placeholder="Иван Иванов" required pattern="[А-Яа-яЁё\s]{2,}">
+                        <input id="name" name="name" type="text" placeholder="Иван Иванов" required pattern="[А-Яа-яЁёА-Za-z\s]{2,}">
                     </div>
                     <div class="form-group">
                         <label for="email">Ваш Email:</label>
@@ -173,7 +173,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Ваше сообщение:</label>
-                        <textarea id="message" name="message" placeholder="Сообщение" rows="5"></textarea>
+                        <textarea id="message" name="message" placeholder="Сообщение" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn submit-btn">
                         <span class="btn-text">Отправить</span>
@@ -184,8 +184,12 @@
         </main>
         <footer>
             <div class="social-links">
-                <a href="https://github.com/Pozer-srgb" aria-label="GitHub профиль" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="mailto:tazanu532@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://github.com/Pozer-srgb" aria-label="GitHub профиль" target="_blank" rel="noopener">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:tazanu532@gmail.com" aria-label="Email" rel="noopener">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
             </div>
             <p>© 2025 Данил. Все права защищены</p>
         </footer>
