@@ -43,7 +43,7 @@
         <meta http-equiv="Content-Security-Policy" 
         content="default-src 'self';
                  script-src 'self' https://mc.yandex.ru https://www.googletagmanager.com 'unsafe-inline';
-                 style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
+                 style-src 'self' https://cdnjs.cloudflare.com;
                  font-src 'self' https://cdnjs.cloudflare.com data:;
                  img-src 'self' https://mc.yandex.ru https://www.googletagmanager.com data:;
                  connect-src 'self' https://mc.yandex.ru https://www.google-analytics.com;
@@ -106,7 +106,7 @@
             <section id="about" class="card">
                 <figure>
                     <picture>
-                        <source srcset="img/my-photo.webp" type="image/webp">
+                        <source srcset="img/my-photo.webp" type="image/webp" decoding="async">
                         <img src="img/my-photo.jpg" alt="Данил - фронтенд-разработчик" width="200" loading="eager">
                     </picture>
                     <figcaption>Данил - Frontend разработчик</figcaption>
@@ -197,7 +197,7 @@
                 "jobTitle": "Frontend Developer",
                 "url": "https://pozer-srgb.github.io",
                 "image": "https://pozer-srgb.github.io/img/my-photo.webp",
-                "email": "mailto:tazanu532@gmail.com",
+                "email": "tazanu532@gmail.com",
                 "sameAs": ["https://github.com/Pozer-srgb"]
             }
         </script>
