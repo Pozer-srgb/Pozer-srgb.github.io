@@ -1,48 +1,72 @@
-const handleFormSubmit = (event) => {
+const showStatusMessage = (form, type, message) => {
+    const statusEl = form.querySelector('.form-status');
+    if (!statusEl) return;
+
+    statusEl.textContent = message;
+    statusEl.className = 'form-status ${type}';
+    statusEl.style.display = 'block';
+
+    setTimeout(() => {
+        statusEl.style.opacity = '0';
+        setTimeout (() => {
+            statusEl.style.display = 'none';
+            statusEl.style.opacity = '1';
+        }, 500);
+    }, 3000);
+};
+
+const handleFormSubmit = async (event) => {
+    event.preventDefault();
     const form = event.target;
     const loader = form.querySelector('.loader');
     const btnText = form.querySelector('.btn-text');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
-    if (loader && btnText) {
-        loader.style.dispaly = 'block';
-        btnText.style.visibility = 'hidden';
+    try {
+        submitBtn.disabled = true;
+        if (loader && btnText) {
+            loader.style.display = 'block';
+            btnText.style.visibility = 'hidden';
+        }
+
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (!response.ok) throw new Error('Ошибка отправки формы');
+
+        showStatusMessage(form, 'success', 'Сообщение успешно отправлено!');
+        form.reset();
+
+    } catch (error) {
+        console.error('Error: ', error);
+        showStatusMessage (form, 'error', 'Ошибка при отправке. Попробуйте ещё раз.');
+    } finally {
+        submitBtn.disabled = false;
+        if (loader && btnText) {
+            loader.style.display = 'none';
+            btnText.style.visibility = 'visible';
+        }
     }
-
-    const formData = new FormData(form);
-
-    fetch('your-api-endpoint', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        loader.style.dispaly = 'none';
-        btnText.style.visibility = 'visible';
-    })
-
-    .then(response => {
-        if (!response.ok) throw new Error('Ошибка сети');
-        alert('Сообщение отправлено!');
-    })
-
-    .catch(error => {
-        console.error('Error:', error);
-    });
 };
 
 const initFormLoader = () => {
-    const form = document.querySelector('.contact-form');
+    const forms = document.querySelectorAll('.contact-form');
 
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
+    forms.forEach(form => {
+        form.addEventListener('submit', handleFormSubmit);
 
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            handlerFormSubmit(e);
+        form.addEventListener('input', (e) => {
+            if(!e.target.matches('input, textarea')) return;
+            e.target.checkValidity();
         });
-    }
+    });
 };
 
 document.addEventListener('DOMContentLoaded', initFormLoader);
