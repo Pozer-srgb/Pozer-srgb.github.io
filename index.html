@@ -2,12 +2,10 @@
 <html lang="ru">
     <head>
 
-        <script data-adblockerignore
+        <script data-adblockdetector-ignore
                 async 
                 defer
-                src="https://www.googletagmanager.com/gtag/js?id=G-8NN6GHTPRD"
-                integrity="sha384-NkgBG9zHHiUyF42+Jyg6a1eXG0C/w7W4vhNNY5L5LNDX6BvS480fS2AG9PEhPwHH"
-                crossorigin="anonymous">
+                src="https://www.googletagmanager.com/gtag/js?id=G-8NN6GHTPRD">
         </script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -17,10 +15,8 @@
             gtag('config', 'G-8NN6GHTPRD');
         </script>
 
-        <script data-adblockerignore 
-                src="https://mc.yandex.ru/metrika/tag.js"
-                integrity="sha384-NkgBG9zHHiUyF42+Jyg6a1eXG0C/w7W4vhNNY5L5LNDX6BvS480fS2AG9PEhPwHH"
-                crossorigin="anonymous">
+        <script data-adblockdetector-ignore
+                src="https://mc.yandex.ru/metrika/tag.js">
         </script>
         <script>
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -46,7 +42,10 @@
                  style-src 'self' https://cdnjs.cloudflare.com;
                  font-src 'self' https://cdnjs.cloudflare.com data:;
                  img-src 'self' https://mc.yandex.ru https://www.googletagmanager.com data:;
-                 connect-src 'self' https://mc.yandex.ru https://www.google-analytics.com;
+                 connect-src 'self' 
+                              https://mc.yandex.ru 
+                              https://www.google-analytics.com
+                              https://www.formspree.io;
                  frame-src https://mc.yandex.ru;
                  object-src 'none';
                  base-uri 'self'">
