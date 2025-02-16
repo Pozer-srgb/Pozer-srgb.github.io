@@ -3,7 +3,7 @@ const showStatusMessage = (form, type, message) => {
     if (!statusEl) return;
 
     statusEl.textContent = message;
-    statusEl.className = 'form-status ${type}';
+    statusEl.className = `form-status ${type}`;
     statusEl.style.display = 'block';
 
     setTimeout(() => {
