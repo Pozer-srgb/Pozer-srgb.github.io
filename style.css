@@ -1,0 +1,205 @@
+@supports not (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Переменные*/
+:root {
+    --primary-color: #2ecc71;
+    --light-bg: #f9f9f9;
+    --dark-bg: #34495e;
+    --txt-color: #2c3e50;
+    --dark-txt: #ffffff;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --animation-duration: 0.3s;
+    --primary-gradient: linear-gradient(135deg, var(--primary-color), #2980b9);
+    --hover-gradient: linear-gradient(135deg, #2980b9, #1c5f8a);
+    --border-opacity: 0.3;
+}
+
+/* Reset стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Теги */
+body {
+    background-color: #ffffff;
+    color: var(--txt-color);
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    transition: background-color var(--animation-duration) ease, 
+                color 0.5s ease;
+}
+
+header, main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out,
+                transform 0.6s ease-out;
+}
+
+h1 {
+    color: inherit;
+    text-align: center;
+    font-size: 2rem;
+}
+
+p {
+    color: inherit;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    transition: transform var(--animation-duration),
+                opacity 0.5s ease;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 
+        background var(--animation-duration) ease,
+        transform 0.2s ease,
+        opacity 0.5s ease;
+    box-shadow: var(--shadow);
+    opacity: 0;
+}
+
+/* Классы */
+.alternate-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-txt);
+}
+
+.alternate-theme button {
+    background: linear-gradient(135deg, #27ae60, #219a52);
+    border: 2px solid rgba(255, 255, 255, var(--border-opacity));
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alternate-theme li {
+    color: var(--txt-color);
+}
+
+.alternate-theme img {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.alternate-theme .skills {
+    border-radius: 8px;
+}
+
+.alternate-theme .skills li {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--dark-txt);
+}
+
+.alternate-theme img,
+.alternate-theme .skills {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, var(--border-opacity));
+}
+
+.skills {
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.skills li {
+    margin: 0.5rem 0;
+    padding: 0.3rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    transition: transform var(--animation-duration) ease,
+                background var(--animation-duration) ease,
+                opacity var(--animation-duration) ease;
+}
+
+.skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.animate-fadein {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Псевдоэлементы */
+.skills li::before {
+    content: "✓";
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+.alternate-theme .skills li::before {
+    color: var(--primary-color);
+}
+
+/* Анимация и интерактив */
+button:hover {
+    background: var(--hover-gradient);
+}
+
+button:focus {      
+    outline: 2px solid var(--primary-color);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button.loaded {
+    opacity: 1;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+img:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+.skills li:hover {
+    transform: translateX(10px) scale(1.02);
+    background: rgba(0, 0, 0, 0.05);
+    opacity: 0.9;
+}
+
+/* Медиа-запросы */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    .skills {
+        margin: 1rem 0;
+        padding: 0.5rem;
+    }
+}

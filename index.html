@@ -1,205 +1,67 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-
-        <script data-adblockdetector-ignore
-                async 
-                defer
-                src="https://www.googletagmanager.com/gtag/js?id=G-8NN6GHTPRD">
-        </script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-8NN6GHTPRD');
-        </script>
-
-        <script data-adblockdetector-ignore
-                src="https://mc.yandex.ru/metrika/tag.js">
-        </script>
-        <script>
-            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
-            ym(99848484, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-            });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/99848484" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
         <meta charset="UTF-8">
+        <meta name="description" content="Сайт-визитка начинающего верстальщика">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self';
-                 script-src 'self' https://mc.yandex.ru https://www.googletagmanager.com 'unsafe-inline';
-                 style-src 'self' https://cdnjs.cloudflare.com;
-                 font-src 'self' https://cdnjs.cloudflare.com data:;
-                 img-src 'self' https://mc.yandex.ru https://www.googletagmanager.com data:;
-                 connect-src 'self' 
-                              https://mc.yandex.ru 
-                              https://www.google-analytics.com
-                              https://www.formspree.io
-                              https://formspree.io;
-                 frame-src https://mc.yandex.ru;
-                 object-src 'none';
-                 base-uri 'self'">
-         <meta http-equiv="X-Content-Type-Options" content="nosniff">
-         <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate">
+        <meta property="og:title" content="Мой первый сайт">
+        <meta property="og:image" content="my-photo.webp">
+        <meta property="og:image:alt" content="Фото автора сайта">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Мой первый сайт">
+        <meta name="twitter:image" content="my-photo.webp">
 
-        <meta name="description" content="Портфолио Данила - начинающего фронтенд-разработчика из Ростова-на-Дону. Адаптивная верстка, современные технологии, frontend">
-        <meta name="keywords" content="frontend разработчик, верстка сайтов, создание лендингов, портфолио программиста">
-        <meta name="yandex-verification" content="b53d5c48500dd9a1">
-        <meta name="google-site-verification" content="aKJCJSu7Bo5lQm330hiYZWfS8ZmO6lWDgs5JOmRfUXc" />
+        <title>Мой первый сайт</title>
 
-        <meta property="og:title" content="Портфолио Данила - Frontend разработчик">
-        <meta property="og:description" content="Сайт-портфолио начинающего frontend разработчика из Ростова-на-Дону">
-        <meta property="og:image" content="https://pozer-srgb.github.io/img/og-image.jpg">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://pozer-srgb.github.io">
-
-        <title>Данил | Frontend разработчик - Портфолио</title>
-
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" 
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-              integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-              crossorigin="anonymous">
+              href="style.css"
+              media="print"
+              onload="this.media='all'">
+        <link rel="icon" 
+              href="img/icon/favicon.svg" 
+              type="image/svg+xml" 
+              sizes="any"
+              srcset="img/icon/favicon-16x16.svg 16w,
+                      img/icon/favicon-32x32.svg 32w">
+        <link rel="alternate icon" href="img/icon/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/icon/favicon-192x192.png" sizes="192x192">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="img/favicon/site.webmanifest">
-
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-        <link rel="canonical" href="https://pozer-srgb.github.io">
-
-        <script src="js/form-loader.js" defer></script>
-        <script src="js/menu-toggle.js" defer></script>
+        <script src="js/intersection-observer-polyfill.js"></script>
     </head>
-    <body data-page="index">
-        <header>
-            <h1>Данил - Frontend разработчик</h1>
-            <p>Портфолио начинающего специалиста</p>
+    <body>
+        <header data-animate>
+            <h1>Привет, я начинающий верстальщик!</h1>
+            <p>Это мой первый сайт, здесь я учусь HTML и CSS</p>
         </header>
-        <nav class="main-nav" role="navigation">
-            <a href="#about" class="nav-link">Обо мне</a>
-            <a href="#hobby" class="nav-link">Хобби</a>
-            <a href="#project" class="nav-link">Проекты</a>
-            <a href="#blog" class="nav-link">Последние статьи</a>
-            <a href="#contact" class="nav-link">Связаться со мной</a>
-        </nav>
-        <button class="menu-toggle" aria-label="Открыть меню" hidden>
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <main role="main">
-            <section id="about" class="card">
-                <figure>
-                    <picture>
-                        <source srcset="img/my-photo.webp" type="image/webp" decoding="async">
-                        <img src="img/my-photo.jpg" alt="Данил - фронтенд-разработчик" width="200" loading="eager">
-                    </picture>
-                    <figcaption>Данил - Frontend разработчик</figcaption>
-                </figure>
-                <div class="about-content">
-                    <h2>Обо мне</h2>
-                    <p>Junior фронтенд-разработчик из Ростова-на-Дону</p>
-                    <ul class="skills-list">
-                        <li>HTML5/CSS3</li>
-                        <li>Адаптивная верстка</li>
-                        <li>JavaScript (базовый)</li>
-                    </ul>
-                </div>
-            </section>
-            <section id="hobby" class="card">
-                <h2>Мои хобби</h2>
-                <ul>
-                    <li>Компьютерные игры</li>
-                    <li>Чтение книг и манги</li>
-                    <li>Просмотр аниме и фильмов</li>
-                    <li>Изучение новых технологий</li>
+        <main data-animate>
+            <picture>
+                <source srcset="img/my-photo.webp 300w,
+                                img/my-photo-large.webp 600w"
+                        sizes="(max-width: 480px) 300px, 600px"
+                        type="image/webp">
+                <img src="img/my-photo.jpg" 
+                     alt="Моё фото" 
+                     width="300" 
+                     height="300" 
+                     loading="lazy" 
+                     decoding="async" 
+                     data-animate-delay="200" 
+                     fetchpriority="high">
+            </picture>
+            <section class="skills" data-animate aria-labelledby="skills-heading">
+                <h2 id="skills-heading">Мои навыки</h2>
+                <ul role="list" aria-label="Список навыков">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript (базовый)</li>
                 </ul>
             </section>
-            <section id="project" class="card projects-section">
-                <h2 class="section-title">Проекты</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-content">
-                            <h3 class="project-title">Портфолио</h3>
-                            <p>Современный адаптивный лендинг</p>
-                            <div class="project-buttons">
-                                <a href="https://pozer-srgb.github.io" class="btn project-btn">Демо</a>
-                                <a href="https://github.com/Pozer-srgb/portfolio" class="btn project-btn">Код</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-            <section id="blog" class="card">
-                <h2>Последние статьи</h2>
-                <article class="blog-post">
-                    <h3>Как я учился верстать</h3>
-                    <time datetime="2025-02-04">4 февраля 2025</time>
-                    <p>Мой путь от новичка до junior-верстальщика начался ещё в 11 классе школы. Я пытался начать изучать вёрстку с бесплатных курсов в интернете, но так далеко не продвинулся из ЕГЭ.</p>
-                    <p>После школы я поступил в ДГТУ (Ростов-на-Дону). И параллельно с учёбой в университете, я снова начал потихоньку осваивать вёрстку, шаг за шагом, никуда не спеша.</p>
-                    <p>И этот путь привёл меня к написанию данного сайта-портфолио, пока что у меня нет проектов, но надеюсь меня заметят, чтобы я и дальше мог развиваться и изучать новые технологии.</p>
-                </article>
-            </section>
-            <section id="contact" class="card">
-                <h2>Связаться со мной</h2>
-                <div class="form-status" aria-live="polite"></div>
-                <form action="https://formspree.io/f/movjnbel" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Ваше имя:</label>
-                        <input id="name" name="name" type="text" placeholder="Иван Иванов" required pattern="[А-Яа-яЁёA-Za-z\s]{2,}">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Ваш Email:</label>
-                        <input id="email" name="email" type="email" placeholder="example@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Ваше сообщение:</label>
-                        <textarea id="message" name="message" placeholder="Сообщение" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn submit-btn">
-                        <span class="btn-text">Отправить</span>
-                        <div class="loader" aria-hidden="true"></div>
-                    </button>
-                </form>
-            </section>
+            <button id="myButton" aria-label="Переключить тему" title="Смена фона" aria-live="polite">🌓 Нажми меня!</button>
+            <audio id="clickSound" preload="none">
+                <source src="audio/click.opus" type="audio/ogg; codecs=opus">
+                <source src="audio/click.mp3" type="audio/mpeg">
+            </audio>
         </main>
-        <footer>
-            <div class="social-links">
-                <a href="https://github.com/Pozer-srgb" aria-label="GitHub профиль" target="_blank" rel="noopener">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
-                <a href="mailto:tazanu532@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                </a>
-            </div>
-            <p>© 2025 Данил. Все права защищены</p>
-        </footer>
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Данил",
-                "jobTitle": "Frontend Developer",
-                "url": "https://pozer-srgb.github.io",
-                "image": "https://pozer-srgb.github.io/img/my-photo.webp",
-                "email": "mailto:tazanu532@gmail.com",
-                "sameAs": ["https://github.com/Pozer-srgb"]
-            }
-        </script>
+        <script src="js/script.js"></script>
     </body>
 </html>
