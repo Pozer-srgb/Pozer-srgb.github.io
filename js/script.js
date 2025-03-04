@@ -42,10 +42,14 @@ if (!elements.audio) {
     console.error('Аудио не найдено');
 }
 
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    document.body.classList.add(savedTheme);
-    updateButtonText();
+try {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme);
+        updateButtonText();
+    }
+} catch (e) {
+    console.log('Не удалось загрузить настройки темы');
 }
 
 elements.button.addEventListener('click', () => {
