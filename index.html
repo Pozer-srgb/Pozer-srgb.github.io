@@ -9,7 +9,7 @@
         <meta property="og:image:alt" content="Фото автора сайта">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Мой первый сайт">
-        <meta name="twitter:image" content="my-photo.webp">
+        <meta name="twitter:image" content="https://pozer-srgb.github.io/img/my-photo.webp">
 
         <title>Мой первый сайт</title>
 
@@ -27,9 +27,10 @@
         <script src="js/intersection-observer-polyfill.js"></script>
 
         <link rel="preload" href="style.css" as="style">
-        <link rel="preload" href="img/my-photo.jpg" as="image">
+        <link rel="preload" href="img/my-photo.avif" as="image">
     </head>
     <body>
+        <a href="#main" class="skip-link">Перейти к содержанию</a>
         <header data-animate>
             <h1>Привет, я начинающий верстальщик!</h1>
             <p>Это мой первый сайт, здесь я учусь HTML и CSS</p>
@@ -40,7 +41,7 @@
                                 img/my-photo-large.webp 600w"
                         sizes="(max-width: 480px) 300px, 600px"
                         type="image/webp">
-                <img src="img/my-photo.jpg" 
+                <img src="img/my-photo.avif" 
                      alt="Моё фото" 
                      width="300" 
                      height="300" 
@@ -63,12 +64,12 @@
                     <article class="project-card">
                         <h3>Адаптивный лендинг</h3>
                         <p>HTML5, CSS Grid, медиа-запросы</p>
-                        <a href="#" aria-label="Посмотреть проект адаптивного лендинга">Подробнее →</a>
+                        <a href="page/landing-demo.html" aria-label="Посмотреть проект адаптивного лендинга">Подробнее →</a>
                     </article>
                     <article class="project-card">
                         <h3>Интерактивная форма</h3>
                         <p>JavaScript, валидация</p>
-                        <a href="#" aria-label="Посмотреть проект интерактивной формы">Подробнее →</a>
+                        <a href="page/form-demo.html" aria-label="Посмотреть проект интерактивной формы">Подробнее →</a>
                     </article>
                 </div>
             </section>
