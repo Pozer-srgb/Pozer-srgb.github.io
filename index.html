@@ -5,7 +5,7 @@
         <meta name="description" content="Сайт-визитка начинающего верстальщика">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:title" content="Мой первый сайт">
-        <meta property="og:image" content="my-photo.webp">
+        <meta property="og:image" content="https://pozer-srgb.github.io/img/my-photo.webp">
         <meta property="og:image:alt" content="Фото автора сайта">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Мой первый сайт">
@@ -14,9 +14,7 @@
         <title>Мой первый сайт</title>
 
         <link rel="stylesheet" 
-              href="style.css"
-              media="print"
-              onload="this.media='all'">
+              href="style.css">
         <link rel="icon" 
               href="img/icon/favicon.svg" 
               type="image/svg+xml" 
@@ -27,6 +25,9 @@
         <link rel="icon" href="img/icon/favicon-192x192.png" sizes="192x192">
 
         <script src="js/intersection-observer-polyfill.js"></script>
+
+        <link rel="preload" href="style.css" as="style">
+        <link rel="preload" href="img/my-photo.jpg" as="image">
     </head>
     <body>
         <header data-animate>
@@ -55,6 +56,21 @@
                     <li>CSS3</li>
                     <li>JavaScript (базовый)</li>
                 </ul>
+            </section>
+            <section class="projects" data-animate aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Мои работы</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Адаптивный лендинг</h3>
+                        <p>HTML5, CSS Grid, медиа-запросы</p>
+                        <a href="#" aria-label="Посмотреть проект адаптивного лендинга">Подробнее →</a>
+                    </article>
+                    <article class="project-card">
+                        <h3>Интерактивная форма</h3>
+                        <p>JavaScript, валидация</p>
+                        <a href="#" aria-label="Посмотреть проект интерактивной формы">Подробнее →</a>
+                    </article>
+                </div>
             </section>
             <button id="myButton" aria-label="Переключить тему" title="Смена фона" aria-live="polite">🌓 Нажми меня!</button>
             <audio id="clickSound" preload="none">
