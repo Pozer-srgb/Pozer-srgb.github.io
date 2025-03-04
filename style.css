@@ -28,6 +28,10 @@
 }
 
 /* Теги */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #ffffff;
     color: var(--txt-color);
@@ -37,6 +41,13 @@ body {
     padding: 0 20px;
     transition: background-color var(--animation-duration) ease, 
                 color 0.5s ease;
+}
+
+header {
+    padding: 2rem 1rem;
+    background: var(--light-bg);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
 }
 
 header, main {
@@ -116,6 +127,7 @@ button {
 }
 
 .alternate-theme img,
+.alternate-theme header,
 .alternate-theme .skills,
 .alternate-theme .projects {
     background: var(--dark-card-bg);
@@ -151,6 +163,7 @@ button {
 .animate-fadein {
     opacity: 1 !important;
     transform: translateY(0) !important;
+    backface-visibility: hidden;
 }
 
 .projects {
@@ -164,14 +177,26 @@ button {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: stretch;
 }
 
 .project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0.5rem 0;
     padding: 1rem;
     background: var(--card-bg);
     border-radius: 8px;
     transition: transform 0.3s ease;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    padding: 1rem;
+    background: var(--light-bg);
 }
 
 /* Псевдоэлементы */
@@ -219,6 +244,12 @@ img:focus {
 
 .project-card:hover {
     transform: translateY(-5px);
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 1000;
 }
 
 /* Медиа-запросы */
