@@ -1,3 +1,5 @@
+let isButtonBusy = false;
+
 const elements = {
     button: document.getElementById('myButton'),
     audio: document.getElementById('clickSound')
@@ -53,6 +55,10 @@ try {
 }
 
 elements.button.addEventListener('click', () => {
+    if (isButtonBusy) return;
+
+    isButtonBusy = true;
+
     elements.audio.play().catch((error) => {
         console.log('Ошибка воспроизведения:', error.message);
         elements.button.setAttribute('aria-label', 'Требуется взаимодействие для звука');
@@ -61,6 +67,10 @@ elements.button.addEventListener('click', () => {
     document.body.classList.toggle('alternate-theme');
     localStorage.setItem('theme', document.body.classList.contains('alternate-theme') ? 'alternate-theme' : '');
     updateButtonText();
+
+    setTimeout(() => {
+        isButtonBusy = false;
+    }, 500);
 });
 
 window.addEventListener ('load', () => {
