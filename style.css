@@ -247,9 +247,12 @@ img:focus {
 }
 
 .skip-link:focus {
+    position: fixed;
     left: 1rem;
     top: 1rem;
     z-index: 1000;
+    background: var(--light-bg);
+    box-shadow: var(--shadow);
 }
 
 /* Медиа-запросы */
@@ -265,5 +268,11 @@ img:focus {
     .skills {
         margin: 1rem 0;
         padding: 0.5rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    meta[name="theme-color"] {
+        content: "#34495e";
     }
 }
