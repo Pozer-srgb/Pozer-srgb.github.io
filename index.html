@@ -10,6 +10,9 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Мой первый сайт">
         <meta name="twitter:image" content="https://pozer-srgb.github.io/img/my-photo.webp">
+        <meta name="twitter:image:width" content="600">
+        <meta name="twitter:image:height" content="600">
+        <meta name="theme-color" content="#2ecc71">
 
         <title>Мой первый сайт</title>
 
@@ -27,7 +30,7 @@
         <script src="js/intersection-observer-polyfill.js"></script>
 
         <link rel="preload" href="style.css" as="style">
-        <link rel="preload" href="img/my-photo.avif" as="image">
+        <link rel="preload" href="img/my-photo.jpg" as="image">
     </head>
     <body>
         <a href="#main" class="skip-link">Перейти к содержанию</a>
@@ -37,11 +40,15 @@
         </header>
         <main data-animate>
             <picture>
+                <source srcset="img/my-photo.avif 300w,
+                                img/my-photo-large.avif 600w"
+                        sizes="(max-width: 480px) 300px, 600px"
+                        type="image/avif">
                 <source srcset="img/my-photo.webp 300w,
                                 img/my-photo-large.webp 600w"
                         sizes="(max-width: 480px) 300px, 600px"
                         type="image/webp">
-                <img src="img/my-photo.avif" 
+                <img src="img/my-photo.jpg" 
                      alt="Моё фото" 
                      width="300" 
                      height="300" 
