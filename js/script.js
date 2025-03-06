@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     elements.audio.preload = 'metadata';
 
+    function updateThemeColor() {
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (document.body.classList.contains('alternate-theme')) {
+            metaThemeColor.setAttribute('content', '#34495e');
+        } else {
+            metaThemeColor.setAttribute('content', '#2ecc71');
+        }
+    }
+
     const observerConfig = {
         threshold: 0.2,
         rootMargin: '0px 0px -50px 0px'
@@ -56,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (savedTheme) {
             document.body.classList.add(savedTheme);
             updateButtonText();
+            updateThemeColor();
         }
     } catch (e) {
         console.log('Не удалось загрузить настройки темы');
@@ -74,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('alternate-theme');
         localStorage.setItem('theme', document.body.classList.contains('alternate-theme') ? 'alternate-theme' : '');
         updateButtonText();
+        updateThemeColor();
 
         setTimeout(() => {
             isButtonBusy = false;
