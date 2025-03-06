@@ -82,6 +82,7 @@ button {
     margin: 0 auto;
     padding: 10px 20px;
     background: var(--primary-gradient);
+    background-image: var(--primary-gradient);
     color: white;
     border: none;
     border-radius: 5px;
@@ -98,6 +99,7 @@ button {
 .alternate-theme {
     background-color: var(--dark-bg);
     color: var(--dark-txt);
+    --contrast-ratio: 4.5;
 }
 
 .alternate-theme button {
@@ -174,6 +176,7 @@ button {
 }
 
 .project-grid {
+    grid-auto-rows: 1fr;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -274,5 +277,9 @@ img:focus {
 @media (prefers-color-scheme: dark) {
     meta[name="theme-color"] {
         content: "#34495e";
+    }
+
+    :root:not(.alternate-theme) {
+        --card-bg: #2c3e50;
     }
 }
