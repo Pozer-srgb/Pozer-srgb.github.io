@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     let isButtonBusy = false;
 
     const elements = {
         button: document.getElementById('myButton'),
         audio: document.getElementById('clickSound')
     };
+
+    elements.audio.preload = 'metadata';
 
     const observerConfig = {
         threshold: 0.2,
