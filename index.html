@@ -5,30 +5,30 @@
         <meta name="description" content="Сайт-визитка начинающего верстальщика">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:title" content="Мой первый сайт">
-        <meta property="og:image" content="https://pozer-srgb.github.io/img/my-photo.webp">
+        <meta property="og:image" content="https://pozer-srgb.github.io/img/photo/my-photo.webp">
         <meta property="og:image:alt" content="Фото автора сайта">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Мой первый сайт">
-        <meta name="twitter:image" content="https://pozer-srgb.github.io/img/my-photo.webp">
+        <meta name="twitter:image" content="https://pozer-srgb.github.io/img/photo/my-photo.webp">
         <meta name="twitter:image:width" content="600">
         <meta name="twitter:image:height" content="600">
         <meta name="theme-color" content="#2ecc71">
 
         <title>Мой первый сайт</title>
 
-        <link rel="stylesheet" 
-              href="style.css">
-        <link rel="icon" 
-              href="img/icon/favicon.svg" 
-              type="image/svg+xml" 
-              sizes="any">
-        <link rel="alternate icon" href="img/icon/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="img/icon/favicon-192x192.png" sizes="192x192">
+        <link rel="preload" 
+              href="style.css" 
+              as="style"
+              onload="this.onload=null;
+                      this.rel='stylesheet'">
+        <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml" sizes="any">
+        <link rel="icon" href="img/icon/favicon.ico" type="image/x-icon">
 
         <script src="js/intersection-observer-polyfill.js"></script>
-
-        <link rel="preload" href="style.css" as="style">
-        <link rel="preload" href="img/my-photo.jpg" as="image">
+        
+        <noscript>
+            <link rel="stylesheet" href="style.css">
+        </noscript>
     </head>
     <body>
         <a href="#main" class="skip-link">Перейти к содержанию</a>
@@ -36,20 +36,15 @@
             <h1>Привет, я начинающий верстальщик!</h1>
             <p>Это мой первый сайт, здесь я учусь HTML и CSS</p>
         </header>
-        <main data-animate>
+        <main id="main" data-animate>
             <picture>
-                <source srcset="img/my-photo.avif 300w,
-                                img/my-photo-large.avif 600w"
-                        sizes="(max-width: 480px) 300px, 600px"
-                        type="image/avif">
-                <source srcset="img/my-photo.webp 300w,
-                                img/my-photo-large.webp 600w"
-                        sizes="(max-width: 480px) 300px, 600px"
+                <source srcset="img/photo/my-photo.webp 300w, img/photo/my-photo-large.webp 600w"
+                        sizes="(max-width: 600px) 300px, 600px"
                         type="image/webp">
-                <img src="img/my-photo.jpg" 
+                <img src="img/photo/my-photo.jpg" 
                      alt="Моё фото" 
-                     width="300" 
-                     height="300" 
+                     width="600" 
+                     height="600" 
                      loading="lazy" 
                      decoding="async" 
                      data-animate-delay="200" >
