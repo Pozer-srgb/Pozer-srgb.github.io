@@ -206,25 +206,6 @@ button {
     transition: top var(--animation-duration) ease;
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-.transcript-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    font-size: 0.9em;
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
 /* Псевдоэлементы */
 .skills li::before {
     content: "✓";
@@ -279,10 +260,6 @@ img:focus {
     z-index: 1000;
     background: var(--light-bg);
     box-shadow: var(--shadow);
-}
-
-.transcript-link:hover {
-    color: var(--hover-gradient);
 }
 
 /* Медиа-запросы */
