@@ -70,13 +70,13 @@
                 </div>
             </section>
             <button id="myButton" aria-label="Переключить тему" title="Смена фона" aria-live="polite">🌓 Нажми меня!</button>
+            <div class="sr-only" id="audio-description">
+                Звук щелчка при переключении темы: короткий высокий тон
+            </div>
             <audio id="clickSound" preload="none" aria-describedby="audio-description">
                 <source src="audio/click.opus" type="audio/ogg; codecs=opus">
                 <source src="audio/click.mp3" type="audio/mpeg">
             </audio>
-            <div class="sr-only" id="audio-description">
-                Звук щелчка при переключении темы: короткий высокий тон
-            </div>
         </main>
         <script src="js/script.js"></script>
     </body>
