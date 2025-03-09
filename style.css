@@ -217,6 +217,14 @@ button {
     border: 0;
 }
 
+.transcript-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 /* Псевдоэлементы */
 .skills li::before {
     content: "✓";
@@ -271,6 +279,10 @@ img:focus {
     z-index: 1000;
     background: var(--light-bg);
     box-shadow: var(--shadow);
+}
+
+.transcript-link:hover {
+    color: var(--hover-gradient);
 }
 
 /* Медиа-запросы */

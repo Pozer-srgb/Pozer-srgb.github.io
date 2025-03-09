@@ -71,12 +71,16 @@
             </section>
             <button id="myButton" aria-label="Переключить тему" title="Смена фона" aria-live="polite">🌓 Нажми меня!</button>
             <div class="sr-only" id="audio-description">
-                Звук щелчка при переключении темы: короткий высокий тон
+                Звуковое сопровождение действия: переключение цветовой темы
             </div>
-            <audio id="clickSound" preload="none" aria-describedby="audio-description">
+            <span id="audio-label" class="sr-only">Звук переключения темы</span>
+            <audio id="clickSound" preload="none" aria-describedby="audio-description" aria-labelledby="audio-label" role="application">
                 <source src="audio/click.opus" type="audio/ogg; codecs=opus">
                 <source src="audio/click.mp3" type="audio/mpeg">
             </audio>
+            <div class="audio-accessibility">
+                <a href="page/audio-transcript.html" class="transcript-link" aria-label="Текстовая расшифровка звукового эффекта">📝 Транскрипт звука</a>
+            </div>
         </main>
         <script src="js/script.js"></script>
     </body>
