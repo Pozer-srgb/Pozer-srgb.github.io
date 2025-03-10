@@ -96,9 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Скрипт для прогресс бара навыков
+    const chartObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.width = entry.target.dataset.level + '%';
+            }
+        });
+    }, {threshold: 0.5});
+
     document.querySelectorAll('.skill-bar').forEach(bar => {
-        setTimeout(() => {
-            bar.style.width = bar.dataset.level + '%'
-        }, 500);
+        chartObserver.observe(bar);
     });
 });
