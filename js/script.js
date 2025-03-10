@@ -99,8 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const chartObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.width = entry.target.dataset.level + '%';
-                entry.target.setAttribute('aria-valuenow', entry.target.dataset.level)
+                const level = entry.target.dataset.level;
+                const label = entry.target.querySelector('.sr-only');
+                entry.target.style.width = level + '%';
+                entry.target.setAttribute('aria-valuenow', level)
+                label.textContent = `${entry.target.dataset.skill}: ${level}%`;
             }
         });
     }, {threshold: 0.5});
