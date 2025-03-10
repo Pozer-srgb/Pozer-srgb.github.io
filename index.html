@@ -67,10 +67,16 @@
             </section>
             <section class="skills-chart" aria-labelledby="chart-heading" data-animate>
                 <h2 id="chart-heading">Прогресс изучения</h2>
-                <div class="chart-container">
-                    <div class="skill-bar" data-skill="HTML5" data-level="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="skill-bar" data-skill="CSS3" data-level="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="skill-bar" data-skill="JavaScript" data-level="45" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="chart-container" aria-live="polite" aria-atomic="true">
+                    <div class="skill-bar" id="html-progress" data-skill="HTML5" data-level="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-labelledby="chart-heading html-progress-label">
+                        <span id="html-progress-label" class="sr-only">HTML5: 85%</span>
+                    </div>
+                    <div class="skill-bar" id="css-progress" data-skill="CSS3" data-level="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-labelledby="chart-heading css-progress-label">
+                        <span id="css-progress-label" class="sr-only">CSS3: 80%</span>
+                    </div>
+                    <div class="skill-bar" id="js-progress" data-skill="JavaScript" data-level="45" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" aria-labelledby="chart-heading js-progress-label">
+                        <span id="js-progress-label" class="sr-only">JavaScript: 45%</span>
+                    </div>
                 </div>
             </section>
             <button id="myButton" aria-label="Переключить тему" title="Смена фона" aria-live="polite">🌓 Нажми меня!</button>
