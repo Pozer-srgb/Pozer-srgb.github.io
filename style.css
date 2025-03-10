@@ -12,6 +12,8 @@
     --txt-color: #2c3e50;
     --dark-txt: #ffffff;
     --card-bg:#f8f9fa;
+    --link-color: #1e7d34;
+    --dark-link-color: #34d975;
     --dark-card-bg: rgba(255, 255, 255, 0.1);
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     --animation-duration: 0.3s;
@@ -143,6 +145,10 @@ button {
     background: var(--dark-card-bg);
 }
 
+.alternate-theme .project-card a {
+    color: var(--dark-link-color);
+}
+
 .skills {
     margin: 2rem 0;
     box-shadow: var(--shadow);
@@ -196,6 +202,15 @@ button {
     background: var(--card-bg);
     border-radius: 8px;
     transition: transform 0.3s ease;
+}
+
+.project-card a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: color var(--animation-duration) ease
+                border-color var(--animation-duration) ease;
 }
 
 .skills-chart {
@@ -286,6 +301,11 @@ img:focus {
     transform: translateY(-5px);
 }
 
+.project-card a:hover {
+    color: #16612a;
+    border-bottom-color: currentColor;
+}
+
 .skip-link:focus {
     position: fixed;
     left: 1rem;
@@ -312,6 +332,10 @@ img:focus {
     opacity: 1;
 }
 
+.alternate-theme .project-card a:hover {
+    color: var(--primary-color);
+}
+
 /* Медиа-запросы */
 @media (max-width: 480px) {
     h1 {
@@ -325,6 +349,10 @@ img:focus {
     .skills {
         margin: 1rem 0;
         padding: 0.5rem;
+    }
+
+    .project-card a {
+        font-size: 0.9em;
     }
 }
 
