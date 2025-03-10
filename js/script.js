@@ -94,4 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener ('load', () => {
         elements.button.classList.add('loaded');
     });
+
+    // Скрипт для прогресс бара навыков
+    document.querySelectorAll('.skill-bar').forEach(bar => {
+        setTimeout(() => {
+            bar.style.width = bar.dataset.level + '%'
+        }, 500);
+    });
 });
