@@ -8,8 +8,8 @@
 :root {
     --primary-color: #2ecc71;
     --light-bg: #f9f9f9;
-    --dark-bg: #34495e;
-    --txt-color: #2c3e50;
+    --dark-bg: #2c3e50;
+    --txt-color: #1a242f;
     --dark-txt: #ffffff;
     --card-bg:#f8f9fa;
     --dark-card-bg: rgba(255, 255, 255, 0.1);
@@ -119,7 +119,8 @@ button {
 }
 
 .alternate-theme .skills,
-.alternate-theme .projects {
+.alternate-theme .projects,
+.alternate-theme .chart-container {
     border-radius: 8px;
 }
 
@@ -131,12 +132,14 @@ button {
 .alternate-theme img,
 .alternate-theme header,
 .alternate-theme .skills,
-.alternate-theme .projects {
+.alternate-theme .projects,
+.alternate-theme  .skills-chart{
     background: var(--dark-card-bg);
     border: 2px solid rgba(255, 255, 255, var(--border-opacity));
 }
 
-.alternate-theme .project-card {
+.alternate-theme .project-card,
+.alternate-theme  .chart-container{
     background: var(--dark-card-bg);
 }
 
@@ -193,6 +196,30 @@ button {
     background: var(--card-bg);
     border-radius: 8px;
     transition: transform 0.3s ease;
+}
+
+.skills-chart {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.chart-container {
+    padding: 0.4rem;
+    margin-top: 1rem;
+    background: var(--card-bg);
+}
+
+.skill-bar {
+    height: 25px;
+    margin: 10px 0;
+    padding-left: 1rem;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s ease-in-out;
 }
 
 .skip-link {
@@ -275,11 +302,5 @@ img:focus {
     .skills {
         margin: 1rem 0;
         padding: 0.5rem;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not(.alternate-theme) {
-        --card-bg: #2c3e50;
     }
 }
