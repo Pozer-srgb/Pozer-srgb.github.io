@@ -209,7 +209,7 @@ button {
     text-decoration: none;
     font-weight: 500;
     border-bottom: 2px solid transparent;
-    transition: color var(--animation-duration) ease
+    transition: color var(--animation-duration) ease,
                 border-color var(--animation-duration) ease;
 }
 
