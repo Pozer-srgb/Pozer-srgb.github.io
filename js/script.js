@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.width = entry.target.dataset.level + '%';
+                entry.target.setAttribute('aria-valuenow', entry.target.dataset.level)
             }
         });
     }, {threshold: 0.5});
