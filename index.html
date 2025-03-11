@@ -80,6 +80,9 @@
                 </div>
             </section>
             <button id="myButton" aria-label="Переключить тему" title="Смена фона" aria-live="polite">🌓 Нажми меня!</button>
+            <div class="sr-only" aria-live="polite" id="theme-announce">
+                Текущая тема: светлая
+            </div>
             <div class="sr-only" id="audio-description" aria-hidden="true">
                 Звуковое подтверждение: смена темы (300ms)
             </div>
@@ -89,5 +92,8 @@
             </audio>
         </main>
         <script src="js/script.js"></script>
+        <button id="backToTop" class="back-to-top" aria-label="Вернуться к началу страницы" title="Наверх">
+            ↑
+        </button>
     </body>
 </html>
