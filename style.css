@@ -43,7 +43,7 @@ body {
     margin: 20px auto;
     padding: 0 20px;
     transition: background-color var(--animation-duration) ease, 
-                color var(--animation-duration) ease,
+                color var(--animation-duration) ease;
 }
 
 header {
