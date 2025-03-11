@@ -3,17 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const elements = {
         button: document.getElementById('myButton'),
-        audio: document.getElementById('clickSound')
+        audio: document.getElementById('clickSound'),
+        backToTop: document.getElementById('backToTop')
     };
 
     elements.audio.preload = 'metadata';
 
     function updateThemeColor() {
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        if (document.body.classList.contains('alternate-theme')) {
+        const themeAnnounce = document.getElementById('theme-announce');
+        const isDark = document.body.classList.contains('alternate-theme');
+
+        if (isDark) {
             metaThemeColor.setAttribute('content', '#34495e');
+            themeAnnounce.textContent = 'Тёмная тема включена';
         } else {
             metaThemeColor.setAttribute('content', '#2ecc71');
+            themeAnnounce.textContent = 'Светлая тема включена';
         }
     }
 
@@ -110,5 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.skill-bar').forEach(bar => {
         chartObserver.observe(bar);
+    });
+
+    // Скрипт для кнопки "Наверх"
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollY > 300) {
+            elements.backToTop.classList.add('visible');
+        } else {
+            elements.backToTop.classList.remove('visible');
+        }
+    });
+
+    elements.backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
