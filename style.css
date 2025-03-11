@@ -19,6 +19,7 @@
     --animation-duration: 0.3s;
     --primary-gradient: linear-gradient(135deg, var(--primary-color), #2980b9);
     --hover-gradient: linear-gradient(135deg, #2980b9, #1c5f8a);
+    --gradient-transition: background-image var(--animation-duration) ease;
     --border-opacity: 0.3;
 }
 
@@ -42,7 +43,7 @@ body {
     margin: 20px auto;
     padding: 0 20px;
     transition: background-color var(--animation-duration) ease, 
-                color 0.5s ease;
+                color var(--animation-duration) ease,
 }
 
 header {
@@ -52,11 +53,17 @@ header {
     margin-bottom: 2rem;
 }
 
+nav {
+    margin-top: 1rem;
+    position: relative;
+}
+
 header, main {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out,
                 transform 0.6s ease-out;
+    will-change: opacity, transform;
 }
 
 h1 {
@@ -90,7 +97,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: 
-        background var(--animation-duration) ease,
+        var(--gradient-transition),
         transform 0.2s ease,
         opacity 0.5s ease;
     box-shadow: var(--shadow);
@@ -149,6 +156,10 @@ button {
     color: var(--dark-link-color);
 }
 
+.alternate-theme .back-to-top {
+    border-radius: 50%;
+}
+
 .skills {
     margin: 2rem 0;
     box-shadow: var(--shadow);
@@ -164,6 +175,12 @@ button {
     transition: transform var(--animation-duration) ease,
                 background var(--animation-duration) ease,
                 opacity var(--animation-duration) ease;
+}
+
+.skills li,
+.project-card, 
+.skill-bar {
+    will-change: transform;
 }
 
 .skills ul {
@@ -239,6 +256,32 @@ button {
     transition: width 1s ease-in-out;
 }
 
+.back-to-top {
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: bottom var(--animation-duration) ease,
+                opacity var(--animation-duration) ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+.back-to-top.visible {
+    bottom: 20px;
+    opacity: 1;
+}
+
 .skip-link {
     position: absolute;
     top: -100px;
@@ -253,6 +296,8 @@ button {
 .sr-only[aria-hidden="true"] {
     display: none;
 }
+
+/* ID */
 
 /* Псевдоэлементы */
 .skills li::before {
@@ -336,6 +381,11 @@ img:focus {
     color: var(--primary-color);
 }
 
+.back-to-top:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 /* Медиа-запросы */
 @media (max-width: 480px) {
     h1 {
@@ -353,6 +403,27 @@ img:focus {
 
     .project-card a {
         font-size: 0.9em;
+    }
+}
+
+@media (max-width: 600px) {
+    #menuToggle {
+        display: block;
+        margin: 0 auto;
+    }
+
+    main#Menu {
+        display: none;
+        position: absolute;
+        background: var(--light-bg);
+        width: 100%;
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        padding: 1rem;
+    }
+
+    #mainMenu[aria-expanded="true"] {
+        display: block;
     }
 }
 
