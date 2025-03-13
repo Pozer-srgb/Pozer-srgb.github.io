@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const delay = entry.target.dataset.animateDelay || 0;
@@ -70,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             document.body.classList.add(savedTheme);
+            updateThemeColor();
             updateButtonText();
+        } else {
             updateThemeColor();
         }
     } catch (e) {
@@ -119,20 +121,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Скрипт для кнопки "Наверх"
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (elements.backToTop) {
+        let lastKnowY = 0;
+        window.addEventListener('scroll', () => {
+            const y = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (scrollY > 300) {
-            elements.backToTop.classList.add('visible');
-        } else {
-            elements.backToTop.classList.remove('visible');
+            if (Math.abs(y - lastKnowY) > 50) {
+                elements.backToTop.classList.toggle('visible', y > 300);
+                lastKnowY = y;
+            }
+        });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Home') {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     });
 
-    elements.backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        elements.backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            setTimeout(() => document.querySelector('h1').focus(), 500);
         });
-    });
+    } else {
+        console.warn('Кнопка "Наверх" не найдена');
+    }
 });
