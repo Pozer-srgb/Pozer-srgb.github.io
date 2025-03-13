@@ -19,6 +19,7 @@
     --animation-duration: 0.3s;
     --primary-gradient: linear-gradient(135deg, var(--primary-color), #2980b9);
     --hover-gradient: linear-gradient(135deg, #2980b9, #1c5f8a);
+    --dark-gradient: linear-gradient(135deg, #27ae60, #219a52);
     --gradient-transition: background-image var(--animation-duration) ease;
     --border-opacity: 0.3;
 }
@@ -112,7 +113,7 @@ button {
 }
 
 .alternate-theme button {
-    background: linear-gradient(135deg, #27ae60, #219a52);
+    background: var(--dark-gradient);
     border: 2px solid rgba(255, 255, 255, var(--border-opacity));
     padding: 10px;
     border-radius: 5px;
@@ -158,6 +159,14 @@ button {
 
 .alternate-theme .back-to-top {
     border-radius: 50%;
+    background: var(--dark-gradient);
+    border: 1px solid rgba(255,255,255,0.3);
+
+}
+
+.alternate-theme .skill-bar {
+    background: var(--dark-link-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .skills {
@@ -269,7 +278,8 @@ button {
     cursor: pointer;
     opacity: 0;
     transition: bottom var(--animation-duration) ease,
-                opacity var(--animation-duration) ease;
+                opacity var(--animation-duration) ease,
+                transform 0.2s ease;
     box-shadow: var(--shadow);
     display: flex;
     align-items: center;
@@ -386,6 +396,10 @@ img:focus {
     outline-offset: 2px;
 }
 
+.back-to-top:hover {
+    transform: scale(1.1) rotate(360deg);
+}
+
 /* Медиа-запросы */
 @media (max-width: 480px) {
     h1 {
@@ -437,5 +451,12 @@ img:focus {
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
         border: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
     }
 }
