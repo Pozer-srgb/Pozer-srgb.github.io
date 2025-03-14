@@ -122,18 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Скрипт для кнопки "Наверх"
     if (elements.backToTop) {
-        let lastKnowY = 0;
+        let lastKnownY = 0;
         window.addEventListener('scroll', () => {
             const y = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (Math.abs(y - lastKnowY) > 50) {
+            if (Math.abs(y - lastKnownY) > 50) {
                 elements.backToTop.classList.toggle('visible', y > 300);
-                lastKnowY = y;
+                lastKnownY = y;
             }
         });
     
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Home') {
+        if (e.key === 'Home' && e.ctrlKey) {
+            e.preventDefault();
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
     });
