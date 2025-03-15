@@ -93,7 +93,6 @@ button {
     margin: 0 auto;
     padding: 10px 20px;
     background: var(--light-progress-gradient);
-    background-image: var(--light-progress-gradient);
     color: white;
     border: none;
     border-radius: 5px;
@@ -385,7 +384,8 @@ img:focus {
     text-shadow: var(--progress-text-shadow);
     font-weight: 600;
     letter-spacing: 0.5px;
-    font-size: 0.9em;
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    line-height: 25px;
     opacity: 0;
     transition: opacity var(--animation-duration) ease-in-out 0.5s;
 }
