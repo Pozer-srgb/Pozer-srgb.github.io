@@ -1,0 +1,13 @@
+# Блокировка скачивания исходников
+/*.html
+  X-Content-Type-Options: nosniff
+  Content-Disposition: inline
+
+# Защита от MIME-sniffing
+/*.js
+  X-Content-Type-Options: nosniff
+  Content-Type: text/javascript
+
+# Оптимизация кеширования
+/img/*
+  Cache-Control: public, max-age=604800, immutable
