@@ -13,6 +13,18 @@
         <meta name="twitter:image:width" content="600">
         <meta name="twitter:image:height" content="600">
         <meta name="theme-color" content="#2ecc71">
+        <meta http-equiv="Content-Security-Policy"
+              content="default-src 'self';
+                       script-src 'self' 'unsafe-inline';
+                       style-src 'self' 'unsafe-inline';
+                       img-src 'self' data:;
+                       content-src 'self';
+                       font-src 'self';
+                       object-src 'self';
+                       base-uri 'self';
+                       form-action 'self';
+                       frame-ancestors 'none';">
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
         <title>Мой первый сайт</title>
 
@@ -32,16 +44,20 @@
         </header>
         <main id="main" data-animate>
             <picture>
+                <source srcset="img/photo/my-photo.avif 300w, img/photo/my-photo-large.avif 600w"
+                        sizes="(max-width: 600px) 300px, 600px"
+                        type="image/avif">
                 <source srcset="img/photo/my-photo.webp 300w, img/photo/my-photo-large.webp 600w"
                         sizes="(max-width: 600px) 300px, 600px"
                         type="image/webp">
                 <img src="img/photo/my-photo.jpg" 
-                     alt="Моё фото" 
+                     alt="Фото автора сайта, одетого в Casual стиль, работающего за ноутбуком" 
                      width="600" 
                      height="600" 
                      loading="lazy" 
                      decoding="async" 
-                     data-animate-delay="200" >
+                     data-animate-delay="200"
+                     importance="low">
             </picture>
             <section class="skills" data-animate aria-labelledby="skills-heading">
                 <h2 id="skills-heading">Мои навыки</h2>
@@ -96,5 +112,18 @@
         <button id="backToTop" class="back-to-top" aria-label="Вернуться к началу страницы" title="Наверх (Клавиша Home)">
             ↑
         </button>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Danil",
+                "jobTitle": "Web-developer"
+                "image": "https://pozer-srgb.github.io/img/photo/my-photo.jpg",
+                "url": "https://pozer-srgb.github.io",
+                "sameAs": [
+                    "https://github.com/pozer-srgb"
+                ]
+            }
+        </script>
     </body>
 </html>
