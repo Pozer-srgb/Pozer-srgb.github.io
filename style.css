@@ -6,7 +6,11 @@
 
 /* Переменные*/
 :root {
-    --primary-color: #2ecc71;
+    --primary-hue: 145;
+    --primary-saturation: 63%;
+    --primary-lightness: 47%;
+
+    --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
     --light-bg: #f9f9f9;
     --dark-bg: #1a242f;
     --txt-color: #2c3e50;
@@ -19,8 +23,12 @@
     --progress-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     --animation-duration: 0.3s;
     --hover-gradient: linear-gradient(135deg, #2980b9, #1c5f8a);
-    --light-progress-gradient: linear-gradient(135deg, #2ecc71, #2980b9);
-    --dark-progress-gradient: linear-gradient(135deg, #1e7d34, #16612a);;
+    --light-progress-gradient: linear-gradient(135deg, 
+                               hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness)), 
+                             hsl(204, 64%, 44%));
+    --dark-progress-gradient: linear-gradient(135deg, 
+                              hsl(var(--primary-hue), 64%, 30%), 
+                              hsl(var(--primary-hue), 64&, 22%));
     --gradient-transition: background-image var(--animation-duration) ease;
     --border-opacity: 0.3;
 }
@@ -143,7 +151,8 @@ button {
 .alternate-theme header,
 .alternate-theme .skills,
 .alternate-theme .projects,
-.alternate-theme  .skills-chart{
+.alternate-theme  .skills-chart,
+.alternate-theme .theme-indicator {
     background: var(--dark-card-bg);
     border: 2px solid rgba(255, 255, 255, var(--border-opacity));
 }
@@ -168,6 +177,10 @@ button {
     background: var(--dark-progress-gradient);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: inset var(--shadow);
+}
+
+.alternate-theme #themeIcon {
+    transform: rotate(180deg);
 }
 
 .skills {
@@ -294,6 +307,19 @@ button {
     opacity: 1;
 }
 
+.theme-indicator {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border-radius: 2rem;
+    transition: all var(--animation-duration) ease;
+    box-shadow: var(--shadow);
+}
+
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -313,6 +339,10 @@ button {
 }
 
 /* ID */
+#themeIcon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
 
 /* Анимация и интерактив */
 .skills li::before {
@@ -421,6 +451,14 @@ img:focus {
 
 .back-to-top:hover {
     transform: scale(1.1) rotate(360deg);
+}
+
+#themeText::after {
+    content: "Светлая";
+}
+
+.alternate-theme #themeText::after {
+    content: "Тёмная";
 }
 
 /* Медиа-запросы */
