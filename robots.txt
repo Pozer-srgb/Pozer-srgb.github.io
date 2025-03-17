@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /private/
 Disallow: /temp/
 
 Sitemap: https://pozer-srgb.github.io/sitemap.xml
