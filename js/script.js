@@ -51,11 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateButtonText() {
         const isDark = document.body.classList.contains('alternate-theme');
-        elements.button.textContent = buttonTexts[isDark];
+        elements.button.textContent = isDark ? '🌞 Светлая тема' : '🌙 Тёмная тема';
         elements.button.setAttribute (
             'aria-label',
             isDark ? 'Включить светлую тему' : 'Включить тёмную тему'
         );
+
+        document.getElementById('themeIcon').textContent = isDark ? '🌙' : '🌞';
     }
 
     if (!elements.button) {
