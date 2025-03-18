@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isButtonBusy = false;
 
     const elements = {
-        button: document.getElementById('myButton'),
+        themeToggle: document.getElementById('themeToggle'),
         audio: document.getElementById('clickSound'),
         backToTop: document.getElementById('backToTop')
     };
@@ -44,20 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    const buttonTexts = {
-        true: '🌞 Вернуть тему',
-        false: '🌓 Нажми меня!'
-    };
-
     function updateButtonText() {
         const isDark = document.body.classList.contains('alternate-theme');
-        elements.button.textContent = isDark ? '🌞 Светлая тема' : '🌙 Тёмная тема';
-        elements.button.setAttribute (
+        elements.themeToggle.textContent = isDark ? '🌞' : '🌙';
+        elements.themeToggle.setAttribute (
             'aria-label',
             isDark ? 'Включить светлую тему' : 'Включить тёмную тему'
         );
 
-        document.getElementById('themeIcon').textContent = isDark ? '🌙' : '🌞';
     }
 
     if (!elements.button) {
@@ -81,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Не удалось загрузить настройки темы');
     }
 
-    elements.button.addEventListener('click', () => {
+    elements.themeToggle.addEventListener('click', () => {
         if (isButtonBusy) return;
 
         isButtonBusy = true;
@@ -102,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener ('load', () => {
-        elements.button.classList.add('loaded');
+        elements.themeToggle.classList.add('loaded');
     });
 
     // Скрипт для прогресс бара навыков
