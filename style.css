@@ -28,7 +28,7 @@
                              hsl(204, 64%, 44%));
     --dark-progress-gradient: linear-gradient(135deg, 
                               hsl(var(--primary-hue), 64%, 30%), 
-                              hsl(var(--primary-hue), 64&, 22%));
+                              hsl(var(--primary-hue), 64%, 22%));
     --gradient-transition: background-image var(--animation-duration) ease;
     --border-opacity: 0.3;
 }
@@ -96,35 +96,37 @@ img {
                 opacity 0.5s ease;
 }
 
-button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
+/* Классы */
+.theme-toggle {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     background: var(--light-progress-gradient);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: 
-        var(--gradient-transition),
-        transform 0.2s ease,
-        opacity 0.5s ease;
-    box-shadow: var(--shadow);
     opacity: 0;
+    transition: all var(--animation-duration) ease
+                transform var(--animation-duration) cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    z-index: 1000;
 }
 
-/* Классы */
+.theme-toggle.loaded {
+    opacity: 1;
+}
+
 .alternate-theme {
     background-color: var(--dark-bg);
     color: var(--dark-txt);
     --contrast-ratio: 4.5;
-}
-
-.alternate-theme button {
-    background: var(--dark-progress-gradient);
-    border: 2px solid rgba(255, 255, 255, var(--border-opacity));
-    padding: 10px;
-    border-radius: 5px;
 }
 
 .alternate-theme li {
@@ -151,8 +153,7 @@ button {
 .alternate-theme header,
 .alternate-theme .skills,
 .alternate-theme .projects,
-.alternate-theme  .skills-chart,
-.alternate-theme .theme-indicator {
+.alternate-theme  .skills-chart {
     background: var(--dark-card-bg);
     border: 2px solid rgba(255, 255, 255, var(--border-opacity));
 }
@@ -179,8 +180,9 @@ button {
     box-shadow: inset var(--shadow);
 }
 
-.alternate-theme #themeIcon {
-    transform: rotate(180deg);
+.alternate-theme .theme-toggle {
+    background: var(--dark-progress-gradient);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .skills {
@@ -307,18 +309,6 @@ button {
     opacity: 1;
 }
 
-.theme-indicator {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
-    padding: 0.5rem 1rem;
-    background: var(--card-bg);
-    border-radius: 2rem;
-    transition: all var(--animation-duration) ease;
-    box-shadow: var(--shadow);
-}
 
 .skip-link {
     position: absolute;
@@ -339,10 +329,6 @@ button {
 }
 
 /* ID */
-#themeIcon {
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
-}
 
 /* Анимация и интерактив */
 .skills li::before {
@@ -353,22 +339,6 @@ button {
 
 .alternate-theme .skills li::before {
     color: var(--primary-color);
-}
-
-button:hover {
-    background: var(--hover-gradient);
-}
-
-button:focus {      
-    outline: 2px solid var(--primary-color);
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-button.loaded {
-    opacity: 1;
 }
 
 img:hover {
@@ -449,26 +419,17 @@ img:focus {
     outline-offset: 2px;
 }
 
-.back-to-top:hover {
+.back-to-top:hover,
+.theme-toggle:hover {
     transform: scale(1.1) rotate(360deg);
-}
-
-#themeText::after {
-    content: "Светлая";
-}
-
-.alternate-theme #themeText::after {
-    content: "Тёмная";
+    opacity: 0.9 !important;
+    transition: all var(--animation-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Медиа-запросы */
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
-    }
-
-    button {
-        padding: 8px 16px;
     }
 
     .skills {
