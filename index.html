@@ -40,6 +40,17 @@
     <body>
         <a href="#main" class="skip-link">Перейти к содержанию</a>
         <header data-animate>
+            <button id="themeToggle" class="theme-toggle" aria-label="Переключить тему" title="Смена цветовой темы" aria-live="polite">🌙</button>
+            <div class="sr-only" id="audio-description" aria-hidden="true">
+                Звуковое подтверждение: смена темы (300ms)
+            </div>
+            <div class="sr-only" aria-live="polite" id="theme-announce">
+                Текущая тема: светлая
+            </div>
+            <audio id="clickSound" preload="none" aria-describedby="audio-description">
+                <source src="audio/click.opus" type="audio/ogg; codecs=opus">
+                <source src="audio/click.mp3" type="audio/mpeg">
+            </audio>
             <h1>Привет, я начинающий верстальщик!</h1>
             <p>Это мой первый сайт, здесь я учусь HTML и CSS</p>
         </header>
@@ -97,21 +108,6 @@
                     </div>
                 </div>
             </section>
-            <div class="theme-indicator" aria-hidden="true">
-                <span id="themeIcon">🌓</span>
-                <span id="themeText">Тема</span>
-            </div>
-            <button id="myButton" aria-label="Переключить тему" title="Смена фона" aria-live="polite">🌓 Нажми меня!</button>
-            <div class="sr-only" id="audio-description" aria-hidden="true">
-                Звуковое подтверждение: смена темы (300ms)
-            </div>
-            <div class="sr-only" aria-live="polite" id="theme-announce">
-                Текущая тема: светлая
-            </div>
-            <audio id="clickSound" preload="none" aria-describedby="audio-description">
-                <source src="audio/click.opus" type="audio/ogg; codecs=opus">
-                <source src="audio/click.mp3" type="audio/mpeg">
-            </audio>
         </main>
         <script src="js/script.js"></script>
         <button id="backToTop" class="back-to-top" aria-label="Вернуться к началу страницы" title="Наверх (Клавиша Home)">
