@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    if (!elements.button) {
+    if (!elements.themeToggle) {
         console.error('Кнопка не найдена');
     }
 
