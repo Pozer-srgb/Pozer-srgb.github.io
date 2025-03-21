@@ -130,6 +130,8 @@ img {
     justify-content: center;
     font-size: 1.4em;
     z-index: 1000;
+    line-height: 1;
+    padding: 0;
 }
 
 .theme-toggle.loaded {
@@ -322,6 +324,15 @@ img {
     opacity: 1;
 }
 
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+}
+
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -350,6 +361,10 @@ img {
 }
 
 .alternate-theme .skills li::before {
+    color: var(--primary-color);
+}
+
+.alternate-theme .project-card a:hover {
     color: var(--primary-color);
 }
 
@@ -431,10 +446,6 @@ section:hover h2 {
     opacity: 1;
 }
 
-.alternate-theme .project-card a:hover {
-    color: var(--primary-color);
-}
-
 .back-to-top:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
@@ -446,6 +457,12 @@ section:hover h2 {
 
 .theme-toggle:hover {
     transform: scale(1.1) rotate(180deg);  
+}
+
+.theme-toggle::before {
+    content: "";
+    display: block;
+    padding-top: 2px;
 }
 
 .back-to-top:hover,
@@ -460,6 +477,11 @@ section:hover h2 {
         font-size: 1.5rem;
     }
 
+    img {
+        margin: 10px 0;
+        border-radius: 8px;
+    }
+
     .skills {
         margin: 1rem 0;
         padding: 0.5rem;
@@ -468,27 +490,13 @@ section:hover h2 {
     .project-card a {
         font-size: 0.9em;
     }
-}
 
-@media (max-width: 600px) {
-    #menuToggle {
-        display: block;
-        margin: 0 auto;
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2em;
     }
 
-    main#Menu {
-        display: none;
-        position: absolute;
-        background: var(--light-bg);
-        width: 100%;
-        box-shadow: var(--shadow);
-        z-index: 1000;
-        padding: 1rem;
-    }
-
-    #mainMenu[aria-expanded="true"] {
-        display: block;
-    }
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
