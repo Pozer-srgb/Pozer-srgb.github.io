@@ -7,8 +7,8 @@
 /* Переменные*/
 :root {
     --primary-hue: 145;
-    --primary-saturation: 63%;
-    --primary-lightness: 47%;
+    --primary-saturation: 70%;
+    --primary-lightness: 35%;
 
     --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
     --light-bg: #f9f9f9;
@@ -122,7 +122,7 @@ img {
     border-radius: 50%;
     cursor: pointer;
     opacity: 0;
-    transition: transform var(--animation-duration) ease,
+    transition: transform  0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
                 opacity var(--animation-duration) ease;
     box-shadow: var(--shadow);
     display: flex;
@@ -440,9 +440,16 @@ section:hover h2 {
     outline-offset: 2px;
 }
 
+.back-to-top:hover {
+    transform: scale(1.1) rotate(360deg);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(180deg);  
+}
+
 .back-to-top:hover,
 .theme-toggle:hover {
-    transform: scale(1.1) rotate(360deg);
     opacity: 0.9 !important;
     transition: all var(--animation-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
