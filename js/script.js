@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateButtonText() {
         const isDark = document.body.classList.contains('alternate-theme');
-        elements.themeToggle.textContent = isDark ? '🌞' : '🌙';
+        elements.themeToggle.style.transform = isDark ? 'rotate(180deg)' : 'rotate(0deg)';
+        elements.themeToggle.textContent = isDark ? '🌓' : '🌓';
         elements.themeToggle.setAttribute (
             'aria-label',
             isDark ? 'Включить светлую тему' : 'Включить тёмную тему'
@@ -82,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         elements.audio.play().catch((error) => {
             console.log('Ошибка воспроизведения:', error.message);
-            elements.button.setAttribute('aria-label', 'Требуется взаимодействие для звука');
-            elements.button.disabled = true;
+            elements.themeToggle.setAttribute('aria-label', 'Требуется взаимодействие для звука');
+            elements.themeToggle.disabled = true;
         });
         document.body.classList.toggle('alternate-theme');
         localStorage.setItem('theme', document.body.classList.contains('alternate-theme') ? 'alternate-theme' : '');
