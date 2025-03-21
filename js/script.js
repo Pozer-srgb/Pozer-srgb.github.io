@@ -44,10 +44,25 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
+    const imgObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                imgObserver.unobserve(img);
+            }
+        });
+    }, {rootMargin: '100px'});
+
+    document.querySelectorAll('.lazy-load').forEach(img => {
+        imgObserver.observe(img);
+    });
+
     function updateButtonText() {
         const isDark = document.body.classList.contains('alternate-theme');
         elements.themeToggle.style.transform = isDark ? 'rotate(180deg)' : 'rotate(0deg)';
-        elements.themeToggle.textContent = isDark ? '🌓' : '🌓';
+        elements.themeToggle.textContent = isDark ? '🌙' : '🌞';
         elements.themeToggle.setAttribute (
             'aria-label',
             isDark ? 'Включить светлую тему' : 'Включить тёмную тему'
