@@ -208,6 +208,8 @@ img {
 }
 
 .skills li {
+    position: relative;
+    overflow: hidden;
     margin: 0.5rem 0;
     padding: 0.3rem;
     background: var(--card-bg);
@@ -360,6 +362,28 @@ img {
     color: var(--primary-color);
 }
 
+.skills li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--animation-duration) ease;
+
+}
+
+.skills li:hover::after {
+    width: 100%;
+}
+
+.skills li:hover {
+    transform: translateX(10px) scale(1.02);
+    background: rgba(0, 0, 0, 0.05);
+    opacity: 0.9;
+}
+
 .alternate-theme .skills li::before {
     color: var(--primary-color);
 }
@@ -384,12 +408,6 @@ section:hover {
 
 section:hover h2 {
     color: var(--primary-color);
-}
-
-.skills li:hover {
-    transform: translateX(10px) scale(1.02);
-    background: rgba(0, 0, 0, 0.05);
-    opacity: 0.9;
 }
 
 .project-card:hover {
