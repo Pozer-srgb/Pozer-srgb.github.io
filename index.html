@@ -32,8 +32,10 @@
         <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml" sizes="any">
         <link rel="icon" href="img/icon/favicon.ico" type="image/x-icon">
         <link rel="preload" href="js/script.js" as="script">
+        <link rel="preload" href="js/intersection-observer-polyfill.js" as="script">
         <link rel="preconnect" href="https://github.com">
         <link rel="dns-prefetch" href="https://github.com">
+        <link rel="preload" href="img/photo/my-photo.avif" as="image" type="image/avif">
 
         <script src="js/intersection-observer-polyfill.js"></script>
     </head>
@@ -64,8 +66,9 @@
                 <source srcset="img/photo/my-photo.webp 300w, img/photo/my-photo-large.webp 600w"
                         sizes="(max-width: 600px) 300px, 600px"
                         type="image/webp">
-                <img src="img/photo/my-photo.jpg" 
+                <img src="img/photo/my-photo.jpg"
                      alt="Фото автора сайта, одетого в Casual стиль, работающего за ноутбуком" 
+                     class="lazy-load" 
                      width="600" 
                      height="600" 
                      loading="lazy" 
@@ -84,12 +87,12 @@
             <section class="projects" data-animate aria-labelledby="projects-heading">
                 <h2 id="projects-heading">Мои работы</h2>
                 <div class="project-grid">
-                    <article class="project-card" aria-labelledby="project1-heading">
+                    <article class="project-card" role="gridcell" tabindex="0" aria-labelledby="project1-heading" @keydown.enter="location.href='page/landing-demo.html'">
                         <h3 id="project1-heading">Адаптивный лендинг</h3>
                         <p>HTML5, CSS Grid, медиа-запросы</p>
                         <a href="page/landing-demo.html" aria-label="Посмотреть проект адаптивного лендинга">Подробнее →</a>
                     </article>
-                    <article class="project-card" aria-labelledby="project2-heading">
+                    <article class="project-card" role="gridcell" tabindex="0" aria-labelledby="project2-heading" @keydown.enter="location.href='page/form-demo.html'">
                         <h3 id="project2-heading">Интерактивная форма</h3>
                         <p>JavaScript, валидация</p>
                         <a href="page/form-demo.html" aria-label="Посмотреть проект интерактивной формы">Подробнее →</a>
