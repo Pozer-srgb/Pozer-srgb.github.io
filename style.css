@@ -144,10 +144,6 @@ img {
     --contrast-ratio: 4.5;
 }
 
-.alternate-theme li {
-    color: var(--txt-color);
-}
-
 .alternate-theme img {
     border-radius: 10px !important;
     background: var(--dark-card-bg);
@@ -162,7 +158,7 @@ img {
 
 .alternate-theme .skills li {
     background: rgba(255, 255, 255, 0.05);
-    color: var(--dark-txt);
+    color: var(--dark-txt) !important;
 }
 
 .alternate-theme header,
@@ -384,6 +380,10 @@ img {
     opacity: 0.9;
 }
 
+.skills li:focus {
+    transform: translateX(10px) scale(1.02);
+}
+
 .alternate-theme .skills li::before {
     color: var(--primary-color);
 }
@@ -417,6 +417,12 @@ section:hover h2 {
 .project-card a:hover {
     color: #16612a;
     border-bottom-color: currentColor;
+}
+
+.project-card:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    transform: translateY(-3px);
 }
 
 .skip-link:focus {
@@ -495,6 +501,11 @@ section:hover h2 {
         font-size: 1.5rem;
     }
 
+    h2 {
+        font-size: 1.3rem;
+        padding: 0 10px;
+    }
+
     img {
         margin: 10px 0;
         border-radius: 8px;
@@ -503,6 +514,11 @@ section:hover h2 {
     .skills {
         margin: 1rem 0;
         padding: 0.5rem;
+    }
+
+    .project-card {
+        margin: 0.3rem 0;
+        padding: 0.8rem;
     }
 
     .project-card a {
