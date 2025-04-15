@@ -59,6 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
         imgObserver.observe(img);
     });
 
+    // Обработчк для перехода с помощью клавиатуры (Секция "Проекты")
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                const link = card.querySelector('a');
+                link?.click()
+            }
+        });
+    });
+
     function updateButtonText() {
         const isDark = document.body.classList.contains('alternate-theme');
         elements.themeToggle.style.transform = isDark ? 'rotate(180deg)' : 'rotate(0deg)';
@@ -96,19 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         isButtonBusy = true;
 
-        elements.audio.play().catch((error) => {
-            console.log('Ошибка воспроизведения:', error.message);
-            elements.themeToggle.setAttribute('aria-label', 'Требуется взаимодействие для звука');
-            elements.themeToggle.disabled = true;
-        });
+        elements.audio.play()
+            .finally(() => {
+                isButtonBusy = false;
+            })
+            .catch((error) => {
+                console.log('Ошибка воспроизведения:', error.message);
+                elements.themeToggle.setAttribute('aria-label', 'Требуется взаимодействие для звука');
+                elements.themeToggle.disabled = true;
+            });
+        
         document.body.classList.toggle('alternate-theme');
         localStorage.setItem('theme', document.body.classList.contains('alternate-theme') ? 'alternate-theme' : '');
+        
         updateButtonText();
         updateThemeColor();
-
-        setTimeout(() => {
-            isButtonBusy = false;
-        }, 500);
     });
 
     window.addEventListener ('load', () => {
@@ -151,14 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-        elements.backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    elements.backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
             setTimeout(() => document.querySelector('h1').focus(), 500);
         });
     } else {
         console.warn('Кнопка "Наверх" не найдена');
     }
+
 });
