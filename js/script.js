@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateThemeColor() {
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         const themeAnnounce = document.getElementById('theme-announce');
+        themeAnnounce.setAttribute('aria-live', 'polite');
         const isDark = document.body.classList.contains('alternate-theme');
 
         if (isDark) {
@@ -59,12 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
         imgObserver.observe(img);
     });
 
+    if (window.location.pathname.includes('hangman')) {
+        import('./projects/hangman/hangman.js');
+    }
+
     // Обработчк для перехода с помощью клавиатуры (Секция "Проекты")
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('keydown', (e) => {
             if (e.key === "Enter") {
                 const link = card.querySelector('a');
-                link?.click()
+                if (link) {
+                    link.focus();
+                    link.click();
+                }
             }
         });
     });
