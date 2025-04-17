@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription" content="Интерактивная игра 'Веб-Виселица' - угадай термины веб-разработки">
+    <title>Веб-Виселица</title>
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="hangman.css"> 
+</head>
+<body class="game-page">
+    <a href="https://pozer-srgb.github.io/" class="back-link" aria-label="Вернуться на главную страницу">← Назад</a>
+
+    <main class="hangman-container">
+        <h1 class="sr-only">Игра 'Веб-Виселица'</h1>
+
+        <div class="game-canvas">
+            <canvas id="gallows" width="300" height="250" aria-label="Прогресс игры: виселица и человечек"></canvas>
+            <div class="word-display" aria-label="polite"></div>
+        </div>
+
+        <div class="keybord-container" role="group" aria-label="Виртуальная клавиатура">
+            <div class="keyboard"></div>
+            <div class="game-stats">
+                <p>Ошибки: <span id="errors">0/6</span></p>
+                <button id="restart" class="theme-toggle" aria-label="Начать заново">↻</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="hangman.js" type="module"></script>
+    <script src="../../js/script.js"></script>
+</body>
+</html>

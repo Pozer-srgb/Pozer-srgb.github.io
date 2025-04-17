@@ -35,7 +35,7 @@
         <link rel="preload" href="js/intersection-observer-polyfill.js" as="script">
         <link rel="preconnect" href="https://github.com">
         <link rel="dns-prefetch" href="https://github.com">
-        <link rel="preload" href="img/photo/my-photo.avif" as="image" type="image/avif">
+        <link rel="prefetch" href="projects/hangman/" as="document">
 
         <script src="js/intersection-observer-polyfill.js"></script>
     </head>
@@ -87,15 +87,20 @@
             <section class="projects" data-animate aria-labelledby="projects-heading">
                 <h2 id="projects-heading">Мои работы</h2>
                 <div class="project-grid">
-                    <article class="project-card" role="gridcell" tabindex="0" aria-labelledby="project1-heading" @keydown.enter="location.href='page/landing-demo.html'">
+                    <article class="project-card" role="gridcell" tabindex="0" aria-labelledby="project1-heading">
                         <h3 id="project1-heading">Адаптивный лендинг</h3>
                         <p>HTML5, CSS Grid, медиа-запросы</p>
                         <a href="page/landing-demo.html" aria-label="Посмотреть проект адаптивного лендинга">Подробнее →</a>
                     </article>
-                    <article class="project-card" role="gridcell" tabindex="0" aria-labelledby="project2-heading" @keydown.enter="location.href='page/form-demo.html'">
+                    <article class="project-card" role="gridcell" tabindex="0" aria-labelledby="project2-heading">
                         <h3 id="project2-heading">Интерактивная форма</h3>
                         <p>JavaScript, валидация</p>
                         <a href="page/form-demo.html" aria-label="Посмотреть проект интерактивной формы">Подробнее →</a>
+                    </article>
+                    <article class="project-card" role="gridcell" tabindex="0" aria-labelledby="project3-heading">
+                        <h3 id="project3-heading">Веб-Виселица</h3>
+                        <p>JavaScript, Canvas, Анимации</p>
+                        <a href="projects/hangman/hangman.html" aria-label="Играть в игру 'Веб-Виселица' - угадай термины веб-разработки" data-animate-delay="300">Играть →</a>
                     </article>
                 </div>
             </section>

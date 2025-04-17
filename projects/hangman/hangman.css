@@ -1,0 +1,53 @@
+/* Переменные*/
+:root {
+    --primary-hue: 145;
+    --primary-saturation: 70%;
+    --primary-lightness: 35%;
+
+    --card-bg:#f8f9fa;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+}
+
+/* Классы */
+.game-page {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.hangman-container {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+/* ID */
+#gallows {
+    border: 2px solid var(--primary-color);
+    margin: 1rem auto;
+    display: block;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.keyboard button {
+    padding: 0.8rem;
+    border: 1px solid var(--primary-color);
+    background: none;
+    cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .keyboard {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
