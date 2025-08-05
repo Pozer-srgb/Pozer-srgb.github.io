@@ -13,14 +13,14 @@ class HangmanGame {
 
     initElements() {
         this.canvas = document.getElementById('gallows');
-        this.ctx = this.canvas.getContent('2d');
-        this.wordDisplay = document.querySelector('.keyboard');
+        this.ctx = this.canvas.getContext('2d');
+        this.wordDisplay = document.querySelector('.word-display');
         this.keyboard = document.querySelector('.keyboard');
         this.errorDisplay = document.getElementById('errors');
     }
 
     newGame() {
-        this.secretWorld = this.getRandomWorld();
+        this.secretWord = this.getRandomWorld();
         this.guessedLetters = new Set();
         this.errors = 0;
         this.updateDisplay();
@@ -62,7 +62,7 @@ class HangmanGame {
     saveStats() {
         const stats = JSON.parse(localStorage.getItem('hangmanStats') || '{"wins": 0, "losses": 0}');
         // Обновление статистики
-        localStorage.setItem('hangmanStats', JSON.stringify(stats))
+        localStorage.setItem('hangmanStats', JSON.stringify(stats));
     }
 }
 
