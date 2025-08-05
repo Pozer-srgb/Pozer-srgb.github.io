@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         import('./projects/hangman/hangman.js');
     }
 
-    // Обработчк для перехода с помощью клавиатуры (Секция "Проекты")
+    // Обработчик для перехода с помощью клавиатуры (Секция "Проекты")
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('keydown', (e) => {
             if (e.key === "Enter") {
