@@ -1,3 +1,15 @@
+const themeConfig = {
+    light: {
+        metaColor: '#2ecc71',
+        announceText: 'Светлая тема включена'
+    },
+
+    dark: {
+        metaColor: '#34495e',
+        announceText: 'Тёмная тема включена'
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     let isButtonBusy = false;
 
@@ -15,13 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         themeAnnounce.setAttribute('aria-live', 'polite');
         const isDark = document.body.classList.contains('alternate-theme');
 
-        if (isDark) {
-            metaThemeColor.setAttribute('content', '#34495e');
-            themeAnnounce.textContent = 'Тёмная тема включена';
-        } else {
-            metaThemeColor.setAttribute('content', '#2ecc71');
-            themeAnnounce.textContent = 'Светлая тема включена';
-        }
+        const theme = isDark ? 'dark' : 'light';
+        metaThemeColor.setAttribute('content', themeConfig[theme].metaColor);
+        themeAnnounce.textContent = themeConfig[theme].announceText;
     }
 
     const observerConfig = {
