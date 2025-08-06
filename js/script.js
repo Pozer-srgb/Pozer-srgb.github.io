@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const elements = {
         themeToggle: document.getElementById('themeToggle'),
         audio: document.getElementById('clickSound'),
-        backToTop: document.getElementById('backToTop')
+        backToTop: document.getElementById('backToTop'),
+        shareButton: document.getElementById('shareButton')
     };
 
     elements.audio.preload = 'metadata';
@@ -189,5 +190,22 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('Кнопка "Наверх" не найдена');
     }
+
+    elements.shareButton.addEventListener('click', async () => {
+        try {
+            if (navigator.share) {
+                await navigator.share({
+                    title: 'Мой первый сайт',
+                    text: 'Посмотрите мой сайт-портфолио!',
+                    url: window.location.href
+                });
+            } else {
+                await navigator.clipboard.writeText(window.location.href);
+                alert('Ссылка скопирована в буфер обмена!');
+            }
+        } catch (err) {
+            console.error('Ошибка при попытке поделиться:', err);
+        }
+    })
 
 });
