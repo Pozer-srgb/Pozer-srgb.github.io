@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         shareButton: document.getElementById('shareButton')
     };
 
-    elements.audio.preload = 'metadata';
+    if (elements.audio) {
+        elements.audio.preload = 'metadata';
+    }
 
     function updateThemeColor() {
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
